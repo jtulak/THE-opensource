@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Autor: Jan Tulak
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[left=2cm,top=3cm,width=17cm,height=24cm,dvips]{geometry}
+\providecommand{\uv}[1]{\quotedblbase #1\textquotedblleft}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage[breaklinks]{hyperref}
+\usepackage{breakurl}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+\newcommand\red[1]{{\color{red}#1}}
+\usepackage{mathtools}
+\usepackage{picture}
+\usepackage{float}
+\usepackage{epstopdf}
+
+% roman numbers
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+
+\let\chapter\undefined
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+%\renewcommand\cftsecfont{\normalfont}
+%\renewcommand\cftsecpagefont{\normalfont}
+%\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+%\renewcommand\cftsecdotsep{\cftdot}
+%\renewcommand\cftsubsecdotsep{\cftdot}
+\newcommand{\eps}{\varepsilon}
+
+\let\origappendix\appendix % save the existing appendix command
+\renewcommand\appendix{\clearpage\pagenumbering{Roman}\origappendix}
+
+\begin{document}
+\thispagestyle{empty}
+	\begin{center}
+	\textsc{\LARGE Vysoké učení technické v Brně}\\[1,5mm]
+	\textsc{\Large Fakulta informačních technologií}\\
+	\vspace{\stretch{0.05}}
+	\begin{figure}[!ht]
+		\centering
+		\scalebox{0.35}{\includegraphics{logo}}
+	\end{figure}
+	\vspace{\stretch{0.05}}
+	\LARGE{Kooperace při vytváření }\\
+	\vspace{\stretch{0.05}}
+    \large{Zpráva do předmětu THE}
+	\vspace{\stretch{0.618}}
+	\end{center}
+	{\Large{\textbf{Autor:}} Jan Ťulák (xtulak00)\vspace{5mm}}\\
+	{\hfill \Large \today}\vspace{5mm}
+\newpage
+\input{content}
+\end{document}
