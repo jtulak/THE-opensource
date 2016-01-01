@@ -16,4 +16,4 @@ clean: rmtmp
 	rm -f $(NAME).pdf
 
 rmtmp:
-	rm -f $(NAME).out $(NAME).toc $(NAME).dvi $(NAME).aux $(NAME).log $(NAME).ps $(NAME).nav $(NAME).snm $(NAME).te~ $(NAME).bbl $(NAME).blg logo.log logo-eps-converted-to.pdf
+	rm -f $(NAME).out $(NAME).toc $(NAME).dvi $(NAME).aux $(NAME).log $(NAME).ps $(NAME).nav $(NAME).snm $(NAME).te~ $(NAME).bbl $(NAME).blg $(NAME).tdo logo.log logo-eps-converted-to.pdf
