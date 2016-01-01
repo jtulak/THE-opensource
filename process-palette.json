@@ -1,0 +1,26 @@
+{
+  "commands" : [
+    {
+      "namespace" : "proj",
+      "action" : "Make quick",
+      "command" : "make quick",
+      "cwd" : "{projectPath}",
+      "keystroke" : "cmd-m",
+      "stream" : true,
+      "env" : {
+        "PATH" : "/Users/Honza/perl5/bin:/opt/local/bin:/opt/local/sbin:/usr/texbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
+      }
+    },
+    {
+      "namespace" : "proj",
+      "action" : "Make full",
+      "command" : "make full",
+      "cwd" : "{projectPath}",
+      "keystroke" : "cmd-shift-m",
+      "stream" : true,
+      "env" : {
+        "PATH" : "/Users/Honza/perl5/bin:/opt/local/bin:/opt/local/sbin:/usr/texbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
+      }
+    }
+  ]
+}
