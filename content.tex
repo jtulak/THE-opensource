@@ -6,28 +6,100 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice, je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) V této zprávě se tedy pokouším shrnout dostupné materiály k tématu, které se mi podařilo nalézt.
+\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) V této zprávě se tedy pokouším shrnout dostupné materiály k tématu, které se mi podařilo nalézt.
 \end{abstract}
 
 \listoftodos
 
 \begin{multicols}{2}
-\lettrine[nindent=0em,lines=3]{J}edním z hlavních zdrojů této zprávy je... \todo{Some opening, more about used sources...}
+\lettrine[nindent=0em,lines=3]{P}rotože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji. V případě, že jsem neměl možnost nějaké tvrzení ověřit, např. pro nedostupnost původního materiálu, tuto skutečnost poznačuji.
+
+Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, tedy zkráceně svobodný přístup, distribuce a modifikace.\todo{Some opening, more about used sources...}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Open-source vs proprietární software}
-Podle dotazníku provedeného Computer World v roce 2004 byl "vendor lock-in"\footnote{{\em Vendor lock-in} popisuje situaci, kdy zákazník je nucen pokračovat v užívání konkrétního produktu/dodavatele i při existenci alternativ, protože přechod na jiné řešení či jiného dodavatele by byl pro zákazníka velmi nákladný. Možností, jak může dodavatel lock-in dosáhnout je vícero: (1) systém je navržen tak, aby nebyl kompatibilní s alternativními řešeními od ostatních dodavatelů; (2) využíváním uzavřených architektur a proprietárních standardů; (3) Licenční a patentovou politikou.} jednou z hlavních obav mezi IT odborníky ohledně nastupujícího trendu cloud computingu~\cite{computer-world-2004}. Ve výzkumu provedeném North Bridge v roce 2015 je snaha vyhnout se vendor lock-in zmiňována jako jeden z důvodů pro výběr open-source řešení~\cite{survey-2015}.
+	{\em Tato kapitola vychází ze zprávy Lock-In Strategy in Software Competition, K. Zhu a Z. Zhou~\cite{lock-in-competition}.}
 
-Zatím co pro dodavatele je "lock-in" obvykle přínosný, neboť snižuje
-vyjednávací sílu zákazníka a může umožnit až monopolní postavení i na trhu,
-kde existuje konkurence~\cite[str. 1]{lock-in-competition}, pro zákazníka
-je tomu ze zřejmých důvodů naopak. Intuitivně se zdá, že dodavatelé
-uzavřeného software by měli vždy preferovat lock-in. Paul Klemperer však ve
-svém článku (1986) ukazuje na duopolistickém soupeření se dvěmi obdobími
-(vstupní období a udržovací období) a cenou za změnu dodavatele, že v soupeření o zákazníka mohou dodavatelé nabízet takové slevy pro první období, že celkový zisk z druhého, udržovacího období už nevyrovná ztrátu z prvního~\cite{klemperer-switching-costs}.
+	Podle dotazníku provedeného Computer World v roce 2004 byl \uv{vendor lock-in}\footnote{{\em Vendor lock-in} popisuje situaci, kdy zákazník je nucen pokračovat v užívání konkrétního produktu/dodavatele i při existenci alternativ, protože přechod na jiné řešení či jiného dodavatele by byl pro zákazníka velmi nákladný. Možností, jak může dodavatel lock-in dosáhnout je vícero: (1) systém je navržen tak, aby nebyl kompatibilní s alternativními řešeními od ostatních dodavatelů; (2) využíváním uzavřených architektur a proprietárních standardů; (3) Licenční a patentovou politikou.} jednou z hlavních obav mezi IT odborníky ohledně nastupujícího trendu cloud computingu~\cite{computer-world-2004}. Ve výzkumu provedeném North Bridge v roce 2015 je snaha vyhnout se vendor lock-in zmiňována jako jeden z důvodů pro výběr open-source řešení~\cite{survey-2015}.
 
+	Zatím co pro dodavatele je \uv{lock-in} obvykle přínosný, neboť snižuje
+	vyjednávací sílu zákazníka a může umožnit až monopolní postavení i na trhu,
+	kde existuje konkurence~\cite[str. 1]{lock-in-competition}, pro zákazníka
+	je tomu ze zřejmých důvodů naopak. Intuitivně se zdá, že dodavatelé
+	uzavřeného software by měli vždy preferovat lock-in. Paul Klemperer však ve
+	svém článku (1986) ukazuje na duopolistickém soupeření se dvěmi obdobími
+	(\uv{aktuální období} a \uv{budoucí období}) a cenou za změnu dodavatele, že v soupeření o zákazníka mohou dodavatelé nabízet takové slevy pro první období, že celkový zisk z druhého, udržovacího období už nevyrovná ztrátu z prvního~\cite{klemperer-switching-costs,lock-in-competition}.
 
+	Současně obavy z lock-in posilují pozici open-source hnutí v softwarovém průmyslu, protože zákazníci jej vidí jako možnost, jak snížit svou závislost na jednom proprietárním dodavateli~\cite{opensource-advantage}. Podle průzkumu provedeného Computer Economics (2005) je hlavní výhodou použití open source nikoliv snížení nákladů, ale právě snížení závislosti. Podstatným důvodem je, open source neumožňuje vynucený upgrade a software může být podporován a opravován otevřenou komunitou. Konkurence v komunitě snižuje cenu za podporu a udržování staršího software. Naproti tomu výrobci proprietárního software mohou často vydávat nové verze software a ukončovat podporu starších verzí. Tím nutí zákazníky k (často placenému) upgrade a zákazník je na takovém výrobci závislý, neboť jeho jediná alternativa je zůstat s nepodporovanou verzí. Open Source Initiative tvrdí, že \uv{the promise of open source is ... an end to predatory vendor lock-in.}~\cite{OSI} ({\em Příslib open source je ... konec predátorského lock-in.})
+
+	Autoři studie popisované v této kapitole vytvořili dvou-obdobní model inspirovaný prací P. Klempera. V tomto modelu se zákazníci odlišují mezi sebou svými preferencemi a model zahrnuje open source a {\em nestrategický\footnote{Cenu proprietárního software strategicky stanovuje jeho dodavatel. Otevřená komunita se nechová strategicky, nebude tedy lákat zákazníky na nízkou cenu v prvním období, kterou by následně zvýšila~\cite[str. 2]{lock-in-competition}.}, ale důvěryhodný závazek} o budoucích cenách (tj. cena vždy zůstane zdarma), garantovaný OSS licencemi, jako je třeba GNU General Public License (GPL)\footnote{Zde považuji za nutné zdůraznit, že GNU GPL nezakazuje prodej SW~\cite{selling-foss}. Protože však autor nemůže s takovouto zabránit volnému šíření, může se např. několik potenciálních zákazníků spojit a software zakoupit společně. V praxi tedy nemůže nastat situace s monopolní cenou produktu. Pokud ale ani autor, ani žádný zákazník neposkytne získaný software zdarma někomu dalšímu, cena nemůže být nulová.}~\cite[str. 2]{lock-in-competition}. Rovněž protože zákazník má k dispozici zdrojové kódy a může je dále šířit a modifikovat, nemůže nikdo získat monopolní postavení pro upgrade a podporu.
+
+	Tento závazek open source způsobuje problém pro dodavatele uzavřených řešení, neboť je obtížnější zajmout zákazníka přemýšlejícího o budoucnosti, který může vycícit riziko lock-in. Pokud tedy má vybrat proprietární produkt s očekáváním lock-in, bude takový zákazník chtít výraznou slevu, či dokonce dotaci před pořízením takového produktu. Takové slevy pro získání zákazníků mohou nakonec dodavatele stát víc, než kolik následně na lock-in vydělá v druhé fázi, jak autoři ukazují na svém modelu. Konkrétní ztráta či zisk se však liší, pokud zákazník plánuje jen krátkou dobu dopředu. V takovém případě může být lock-in pro dodavatele výhodný.
+
+	Následující podkapitola popisuje použitý model a jeho předpoklady.
+
+	\subsection{Model}
+	{\em Tato podkapitola je zkráceným překladem. Zdroje jsou uvedeny tak jako v původním textu.}
+
+	Dva dodavatelé software soupeří na jednom trhu. Licencují svůj software pro dvě období, konkrétně současnost a budoucnost. Ceny oznamují současně na začátku každého období. Dodavatelé nemohou nastavit odlišné ceny různým typům zákazníků, protože typ je zákazníkova privátní informace, dodavatelé jej neznají. Software je označen A, nebo O, kde A znamená proprietární software a O je open source. Je známo, že softwarové produkty mají nízké nebo nulové mezní náklady\footnote{Náklady při výrobě dodatečné jednotky produktu, v tomto případě prodeji jedné licence.} (Shapiro a Varian 1999). Pro technické zjednodušení, mezní náklady obou dodavatelů byly normalizovány na nulu. Protože open source může být získán zdarma či za velmi nízkou cenu (zaslání DVD, ...), předpokládáme, že:
+
+	\vspace{10pt}
+	\noindent{\sc Předpoklad 1.}{\em Cena získání OSS je normalizována na nulu.}
+	\vspace{10pt}
+
+	Nechť $p_{it}: i \in {A,O}, t \in {1,2}$ značí cenu získání software $i$ v období $t$. Z předpokladu 1 máme $p_{O1} = p_{O2} = 0$. Protože $p_{O1}$ a $p_{O2}$ nejsou v této zprávě strategické rozhodovací proměnné, nastavujeme je na nulu. Později ukážeme, že i pokud bychom nastavili jejich hodnotu na pozitivní nenulovou konstantu, neovlivní to podstatně výsledek.
+
+	Open source a proprietární software jsou jasně rozlišené. Schmidt a Schnitzer (2002) toto rozlišení modelovali jako horizontální odlišnost\footnote{{\em Horizontal differentiation} -- situace, kdy odlišnost dvou produktů nelze jednoduše ohodnotit např. kvalitativně. Příkladem může být třeba kvalitativně totožný produkt nabízený ve dvou barevných provedeních. Lze rovněž definovat jako {\em\uv{pokud jsou všechny varianty nabízeny za stejnou cenu, je nenulová poptávka po každé z nich}} (Cremer a Thisse 1991, p. 383). Vertikální odlišnost pak poskytuje jednoznačně ohodnotitelné a uspořádatelné srovnání.}. Podle literatury (Caminal a Matutes 1990, Klemperer 1995, Marinoso 2001) zahrnujeme tento rozdíl pomocí {\em modelu horizontální odlišnosti}.
+
+	\vspace{10pt}
+	\noindent{\sc Předpoklad 2.}{\em OSS a proprietární software jsou horizontálně odlišné.}
+	\vspace{10pt}
+
+	Tedy pokud $A$ i $O$ jsou nabízeny za stejnou cenu, někteří zákazníci zvolí $A$, zatímco jiní $O$, protože jinak hodnotí vlastnosti produktu. Například OSS lze snadněji upravit pro konkrétní potřeby, zatímco proprietární software mívá kvalitnější uživatelské rozhraní a dokumentaci. Jako příklad může posloužit srovnání J2EE a .NET. Estes a Maxime (2003) shrnují seznam srovnání mezi J2EE a .NET a konstatují, že výběr záleží na konkrétních potřebách a preferencích  uživatele.
+
+	Motivování takovým pozorovnáním v praxi, přidáváme další rozměr heterogenity: {\em reservation utility}\footnote{Pro {\em reservation utility} se mi nepodařilo nalézt vhodné české slovo. Význam tohoto pojmu by se dal volně větou přeložit jako \uv{využití nasmlouvané kapacity}. V případě SW to odpovídá intenzitě využívání a případně i počtu licencí.}\todo{Czech translation?}, což náš model činí dvourozměrným, na rozdíl od literatury, která používá jednorozměrný horizontální, příp. jednorozměrný vertikální model odlišnosti. Pro každý software totiž mají různí zákazníci různé využití. Někteří jej využívají intenzivně, pro jiné je jen okrajovým nástrojem. To vede k odlišné {\em reservation utility} mezi zákazníky kvůli jejich rozdílům v ohodnocení, rozpočtu, či ceně. (Gartner Researarch Note 2003).
+
+	\vspace{10pt}
+	\noindent{\sc Předpoklad 3.}{\em Zákazníci mají vertikálně odlišnou svou reservation utitlity.}
+	\vspace{10pt}
+
+	Protože model zachycuje heterogenitu ve dvou dimenzích, jsou zákazníci matematicky modelování jako dvojice $r$ a $\theta$, kde $r$ představuje reservation utility a $\theta$, nezávisle na $r$, vzdálenost jejich preference od produktu $A$ (tedy $(1-\theta)$ je vzdálenost od $O$.) Zákazníci jsou uniformě distribuovaní v rozsahu $[0,1]$ pro $\theta$ a pro $r$ v rozsahu $[R, (1+\lambda)R]$, kde $1/\lambda R$ je funkce hustoty, kde $R$ je spodní hranice zákazníkovy reservation utility.
+
+		\vspace{10pt}
+		\noindent{\sc Předpoklad 4.}{\em Zákazníci jsou reprezentováni $(r,\theta)$, kde $\theta \sim U(0,1)$ a $r \sim U(R, R(1+\lambda))$.}
+		\vspace{10pt}
+
+	Pokud zákazník $(r,\theta)$ vybere řešení $A$, pak jeho zisk je $r-\theta - p_{At})$ pro období $t$. Pokud si vybere $O$, pak jeho zisk je $r-(1-\theta)$. Pokud si nevybere nic, jeho zisk je nula. {\em Celkový zisk} je suma zisků za obě období.
+
+	Ve hře jsou dvě období. Na začátku prvního oba dodavatelé zároveň oznámí svou cenu $p_{i1}$. Zákazníci si vytvoří racionální odhadad ceny $p_{i2}$ pro další období, porovnají celkové zisky za obě periody a vyberou si jedno řešení. Ve druhém období dodavatelé provedou upgrade svého software a zaúčtují zákazníkům $p_{i2}$. Zákazník může nadále platit za dříve vybrané řešení, zrušit předplatné (a využívat starou verzi), nebo přejít k druhému řešení.
+
+		\vspace{10pt}
+		\noindent{\sc Předpoklad 5.}{\em Zákazník při přechodu na jiný než původně vybraný software bude muset zaplatit cenu $s (s\geq0)$.}
+		\vspace{10pt}
+
+	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
+
+	\subsection{Výsledky modelu}
+	{\em V této kapitole shrnuji výsledky získané z výše popsaného modelu, což zahrnuje kapitoly 3, 4, 5 a 6 původní zprávy.}
+
+	Nejprve se zaměřme na do budoucna uvažující zákazníky, kteří očekávají, že v případě $A$ budou platit v druhém období vyšší cenu. Pokud dodavatel $A$ dokáže správně nastavit své ceny, pak ve druhém období žádný zákazník nezmění využívaný produkt z $A$ na $O$, ale ani opačně, neboť zákazníci, kteří si $A$ vybrali, takové zvýšení předpokládali a započítali ho k ceně v prvním období. V případě zákazníků, kteří si naopak vybrali $O$ žádný důvod k přechodu není, neboť jejich cena se nezměnila~\cite[kap. 3: Lemma 1]{lock-in-competition}.
+
+	Autoři ukazují, že zákazníci, kteří nejpravděpodobněji přejdou od $A$ k $O$ při neoptimální ceně jsou převážně zákazníci s vysokou reservation utility, tedy zákazníci pro dodavatele důležití.
+
+	Přesto, že při optimálních cenách nedojde ke změně, někteří zákazníci, s nízkou reservation utility, mohou odmítnout upgrade a zůstat na staré verzi, tedy nepřinést v období 2 žádný zisk. To se týká především těch zákazníků, kteří jsou indiferentní mezi $A$ a $O$, a přesto, že ví, že si variantu $A$ z nějakého důvodu nemůžou v období 2 dovolit, sleva v období 1 je přiměje vybrat si produkt $A$~\cite[str. 6]{lock-in-competition}.
+
+	Důsledkem je, že celkový zisk dodavatele $A$ je ve hře, kde ne všichni jeho zákazníci upgradují nižší, než by byl ve hře bez, nebo s nízkou cenou za přechod. Důvodem je, že sice vyšší cena za přechod dovolí dodavateli $A$ účtovat v období 2 vyšší cenu, ale aby získal zákazníky, musí v prvním období nabídnout slevu. Jenže nízká cena v období 1 nenaláká pouze užitečné zákazníky s vysokým reservation utility, ale také \uv{neužitečné}, kteří využijí nízké ceny na úkor dodavatele, ale už nepřinesou žádný následný zisk.
+
+	Pokud ale cena za přechod je nízká či žádná, dodavatel nemůže v období 2 výrazně zvednou cenu. Zákazníci se tak nemusí obávat, že je dodavatel $A$ ve druhém období zneužije a ochotněji přijmou jeho řešení s vědomím, že kdykoliv mohou jít ke konkurenci. Důsledek je, že $A$ nemusí snižovat v prvním období svůj zisk, a tedy nabídnutí možnosti volby zákazníkům je pro něj paradoxně přínosnější~\cite[str. 7 a kap. 3: lemma 2]{lock-in-competition}.
+
+	Model tedy ukazuje, že vendor lock-in v soupeření s Open Source řešením proprietárního dodavatele poškozuje.
+
+	Pokud rozšíříme pohled i na krátkozraké zákazníky\footnote{Krátkozrakým zákazníkem může být například společnost, kde o výběru řešení rozhoduje pracovník, který předpokládá, že v druhém období už nebude v dané společnosti pracovat, a jehož plat či odměna závisí na zisku z prvního období.}, zjistíme, že ti ve svém rozhodování nijak neuvažují následující období a rozhodují se čistě podle cen v první periodě. V takovém případě je pro dodavatele $A$ jednoznačně výhodnější vendor lock-in použít. Je tedy vidět, že chování zákazníků má výrazný vliv na ekvilibrium hry~\cite[kap. 4]{lock-in-competition}.
+
+	Celkový zisk všech zákazníků ve hře byl v případě, že dodavatel $A$ použil lock-in nižší, než pokud měli zákazníci možnost volby~\cite[kap. 5]{lock-in-competition}
+
+	Výsledky tohoto modelu potvrzuje vývoj průmyslu ve zvyšování interoperability mezi proprietárním a Open Source software, jako příklad můžeme použít stále rostoucí příklon či spolupráci s Open Source u Microsoftu a Oracle~\cite[kap. 6]{lock-in-competition}, nebo úspěch Red Hatu~\cite{redhat-growth}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +112,7 @@ svém článku (1986) ukazuje na duopolistickém soupeření se dvěmi obdobími
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Zdroje}
+%\section{Zdroje}
 %\bibliographystyle{czechiso}
 \bibliographystyle{plain}
 %\begin{flushleft}
