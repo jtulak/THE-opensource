@@ -76,7 +76,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Následující podkapitola popisuje použitý model a jeho předpoklady.
 
-	\subsection{Model}
+	\subsection*{Model}
 	{\em Tato podkapitola je zkráceným překladem. Zdroje jsou uvedeny tak jako v původním textu.}
 
 	Dva dodavatelé software soupeří na jednom trhu. Licencují svůj software pro dvě období, konkrétně současnost a budoucnost. Ceny oznamují současně na začátku každého období. Dodavatelé nemohou nastavit odlišné ceny různým typům zákazníků, protože typ je zákazníkova privátní informace, dodavatelé jej neznají. Software je označen A, nebo O, kde A znamená proprietární software a O je open source. Je známo, že softwarové produkty mají nízké nebo nulové mezní náklady\footnote{Náklady při výrobě dodatečné jednotky produktu, v tomto případě prodeji jedné licence.} (Shapiro a Varian 1999). Pro technické zjednodušení, mezní náklady obou dodavatelů byly normalizovány na nulu. Protože open source může být získán zdarma či za velmi nízkou cenu (zaslání DVD, ...), předpokládáme, že:
@@ -117,7 +117,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
 
-	\subsection{Výsledky modelu}
+	\subsection*{Výsledky modelu}
 	{\em V této kapitole shrnuji výsledky získané z výše popsaného modelu, což zahrnuje kapitoly 3, 4, 5 a 6 původní zprávy.}
 
 	Nejprve se zaměřme na do budoucna uvažující zákazníky, kteří očekávají, že v případě $A$ budou platit v druhém období vyšší cenu. Pokud dodavatel $A$ dokáže správně nastavit své ceny, pak ve druhém období žádný zákazník nezmění využívaný produkt z $A$ na $O$, ale ani opačně, neboť zákazníci, kteří si $A$ vybrali, takové zvýšení předpokládali a započítali ho k ceně v prvním období. V případě zákazníků, kteří si naopak vybrali $O$ žádný důvod k přechodu není, neboť jejich cena se nezměnila~\cite[kap. 3: Lemma 1]{lock-in-competition}.
@@ -147,6 +147,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Dále autoři pracují s rozdělením kódu na {\em platformu} a sadu modulů. Platforma poskytuje podporu modulům a je kritickou částí systému. Moduly jsou odlišné části většího systému, které mohou být implementovány nezávisle při dodržení jistých pravidel. Tato definice je použita pro určení odlišných částí systému, nespecifikuje žádnou konkrétní architekturu. V extrémním případě lze říct, že monolitický projekt má platformu a moduly integrované do jednoho nedělitelného celku.
 
+	\subsection*{Nedobrovolný altruismus}
 	Ve svém modelu autoři využívají pojem {\em nedobrovolný altruismus}. Ten lze charakterizovat tak, že práce každého hráče přispěje pozitivně k zisku všech ostatních bez ohledu na to, zda daný hráč chce ostatním pomoci, či ne~\cite[kap. 3]{architecture-opensource}. To reflektuje situaci, kdy jeden hráč vytvoří nějaký software, který je volně zveřejněn, a který může kdokoliv využít aniž by tím jakkoliv ovlivnil zisk autora. Nejlépe to lze ilustrovat hrou v tabulce~\ref{tab:involuntary-altruism-nf}. Hráč má zisk $v$ z použití nějakého software, a cena za vytvoření takového software je $c$. Předpokládáme, že $v > c$, takže pokud by byli hráči izolovaní, vytvořili by oba svou verzi daného programu.
 
 	\begin{Figure}
@@ -212,7 +213,9 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Druhé tvrzení pak dokazují na příkladu s různě ochotnými vývojáři, kdy někteří čekají, jestli za ně neudělá práci někdo jiný, zatímco další začnou pracovat ihned a v každém kole naprogramují jeden modul. Tato situace se dá chápat jako hrozba (,,nebudu pracovat''), ovšem je hrozbou nedůvěryhodnou, neboť v posledním kole tito hráči musí naprogramovat nějaký modul, jak bylo ukazuje předchozí tvrzení. V takové situaci je ovšem i pro vývojáře, kteří by začali pracovat hned, lepší počkat na poslední kolo stejně jako ostatní~\cite[kap. 4.1]{architecture-opensource}.
 
+	V souhrnu pak taková hra s $N$ hráči a $j$ moduly a koly (tedy je možné, aby pro $N =1$ byl naprogramován celý systém se všemy moduly) má vždy co nejrovnoměrnější rozdělení práce. Počet hráčů, kteří se pouze vezou, však nemá na aktivní vývojáře žádný vliv. Pokud $N > j$, tedy je více hráčů než modulů, zisk vývojářů se nijak nezmění oproti $N = j$.
 
+	\subsection*{Hodnota volby}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shrnutí}
 
