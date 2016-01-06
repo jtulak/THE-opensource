@@ -4,9 +4,24 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[twoside]{article}
+\usepackage{ifxetex,ifluatex}
 
-\usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+  \usepackage[czech]{babel}
+  \usepackage[T1]{fontenc}
+\else % if luatex or xelatex
+  \usepackage{fontspec}
+  \usepackage{xevlna} % czech stylistic
+  \ifluatex
+    \usepackage[czech]{babel}
+  \fi
+  \ifxetex
+    \usepackage{polyglossia}
+    \setmainlanguage{czech}
+  \fi
+  \newcommand{\uv}[1]{,,#1''}
+\fi
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{indentfirst}
@@ -18,7 +33,7 @@
 \renewcommand{\marginpar}{\marginnote} % so we can put it in footnotes
 \usepackage{todonotes}
 
-\def\Tpapername{Teorie her a open source}
+\def\Tpapername{Teorie her a open-source}
 \def\Tauthor{Jan Ťulák}
 \def\Tauthoremail{xtulak00@stud.fit.vutbr.cz}
 \def\Tuniversity{FIT VUT Brno}
@@ -28,9 +43,9 @@
 % ------
 % Fonts and typesetting settings
 \usepackage[sc]{mathpazo}
-\usepackage[T1]{fontenc}
 \linespread{1.05} % Palatino needs more space between lines
 \usepackage{microtype}
+\usepackage{lmodern}
 
 
 % ------

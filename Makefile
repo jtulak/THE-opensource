@@ -1,5 +1,6 @@
 NAME=proj
 VLNA_OPTS = -l -m -n -v KkSsVvZzOoUuAaIi
+CC=xelatex
 
 ALL: $(NAME).pdf
 
@@ -9,14 +10,14 @@ $(NAME).pdf: clean full
 
 full:
 	#vlna $(VLNA_OPTS) $(CONTENT).tex
-	pdflatex --enable-write18 -draftmode $(NAME).tex
+	$(CC) --enable-write18 -draftmode $(NAME).tex
 	bibtex $(NAME)
-	pdflatex -draftmode $(NAME).tex
-	pdflatex $(NAME).tex
+	$(CC)  -draftmode $(NAME).tex
+	$(CC)  $(NAME).tex
 
 
 quick:
-	pdflatex $(NAME).tex
+	$(CC) $(NAME).tex
 
 clean: rmtmp
 	rm -f $(NAME).pdf
