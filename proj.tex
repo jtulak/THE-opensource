@@ -6,6 +6,8 @@
 \documentclass[twoside]{article}
 \usepackage{ifxetex,ifluatex}
 
+% ------
+% language and compiller specific settings
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[utf8]{inputenc}
   \usepackage[czech]{babel}
@@ -22,9 +24,10 @@
   \fi
   \newcommand{\uv}[1]{,,#1''}
 \fi
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{indentfirst}
+
+% ------
+% table coloring
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
 
 % ------
 % TODOs
@@ -54,6 +57,9 @@
 \usepackage[font=it]{caption}
 \usepackage{paralist}
 \usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{indentfirst}
 
 \newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}

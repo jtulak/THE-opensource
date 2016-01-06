@@ -14,7 +14,7 @@
 \begin{multicols}{2}
 \lettrine[nindent=0em,lines=3]{O}{pen source} ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci.\todo{Some opening, more about used sources...} V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
 
-Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje, má takováto hra jediné Nashovo ekvilibrium (uzavřít,uzavřít), tedy zisk $(-1,-1)$.
+Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje (a konkurent tak kvůli delšímu vývoji získá méně zákazníků), má takováto hra jediné Nashovo ekvilibrium (uzavřít,uzavřít), tedy zisk $(-1,-1)$.
 
 \begin{Figure}
 \label{tab:classic-prisoner}
@@ -23,7 +23,7 @@ Open source se přitom zásadně liší od zažitých představ a předpokladů 
 		& Otevřít & Uzavřít \\
 		\hline
 	Otevřít & $1,1$ & $-2,2$ \\
-	Uzavřít & $2,-2$ & $-1,-1$ \\
+	Uzavřít & $2,-2$ &\cellcolor{gray!20}  $-1,-1$ \\
 \end{tabular}
 \end{center}
 \captionof{table}{Klasická představa hry o otevřenost vývoje.}
@@ -37,8 +37,8 @@ Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme
 \begin{tabular}{r| c c}
 		& Otevřít & Uzavřít \\
 		\hline
-	Otevřít & $1.5,1.5$ & $-1,1$ \\
-	Uzavřít & $1,-1$ & $-1.5,-1.5$ \\
+	Otevřít &\cellcolor{gray!20}  $1.5,1.5$ & $-1,1$ \\
+	Uzavřít & $1,-1$ &\cellcolor{gray!20}  $-1.5,-1.5$ \\
 \end{tabular}
 \end{center}
 \captionof{table}{Upravená verze hry o otevřenost vývoje.}
@@ -46,8 +46,7 @@ Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme
 
 Tato verze hry, podle tabulky~\ref{tab:new-prisoner}, má Nashova ekvilibria dvě. Stále zůstává (uzavřít,uzavřít), nicméně (otevřít,otevřít) je nyní také ekvilibrium, které navíc poskytuje vůbec největší zisk pro každého hráče~\cite{network-effects-opensource}.
 
-Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků.
-
+Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků. V kapitole~\ref{ch:architecture-opensource} si ukážeme ještě jiný alternativní model, který neuvažuje soupeření, a tedy zisk hráče je stejný (odpovídá námaze na vytvoření), ať už jeho protihráč jeho kód využije, či ne.
 
 Protože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji.
 
@@ -141,7 +140,70 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vliv architektury systému na vývojový proces v open-source}
-\label{sec:architecture-opensource}
+\label{ch:architecture-opensource}
+	{\em Tato kapitola vychází z článku The Architecture of Participation od C. Baldwin a K. Clark~\cite{architecture-opensource}.}
+
+	Autoři tohoto článku si kladou otázku, jaký vliv má modularita (či monolitičnost) na atraktivitu daného projektu pro další vývojáře, kteří se potenciálně mohou zapojit do vývoje. Modularitu pro účely tohoto článku definují tak, že {\em komplexní systém vykazuje modularitu v návrhu, jestliže jeho části mohou být implementovány nezávisle, ale pracují společně a podporují celek.} Tato modularita nemusí být nutně reflektována {\em runtime} modularitou výsledného kódu~\cite[kap. 2.1]{architecture-opensource}
+
+	Dále autoři pracují s rozdělením kódu na {\em platformu} a sadu modulů. Platforma poskytuje podporu modulům a je kritickou částí systému. Moduly jsou odlišné části většího systému, které mohou být implementovány nezávisle při dodržení jistých pravidel. Tato definice je použita pro určení odlišných částí systému, nespecifikuje žádnou konkrétní architekturu. V extrémním případě lze říct, že monolitický projekt má platformu a moduly integrované do jednoho nedělitelného celku.
+
+	Ve svém modelu autoři využívají pojem {\em nedobrovolný altruismus}. Ten lze charakterizovat tak, že práce každého hráče přispěje pozitivně k zisku všech ostatních bez ohledu na to, zda daný hráč chce ostatním pomoci, či ne~\cite[kap. 3]{architecture-opensource}. To reflektuje situaci, kdy jeden hráč vytvoří nějaký software, který je volně zveřejněn, a který může kdokoliv využít aniž by tím jakkoliv ovlivnil zisk autora. Nejlépe to lze ilustrovat hrou v tabulce~\ref{tab:involuntary-altruism-nf}. Hráč má zisk $v$ z použití nějakého software, a cena za vytvoření takového software je $c$. Předpokládáme, že $v > c$, takže pokud by byli hráči izolovaní, vytvořili by oba svou verzi daného programu.
+
+	\begin{Figure}
+	\label{tab:involuntary-altruism-nf}
+	\begin{center}
+	\begin{tabular}{r| c c}
+			& Použít cizí & Vytvořit \\
+			\hline
+		Použít cizí & $0,0$ &\cellcolor{gray!20} $v, v-c$ \\
+		Vytvořit &\cellcolor{gray!20} $v-c, v$ & $v-c, v-c$ \\
+	\end{tabular}
+	\end{center}
+	\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu. Symetrická, jednokolová hra dvou hráčů.}
+	\end{Figure}
+
+	Tato hra má dvě Nashova ekvilibria v ryzích strategiích, kdy jeden vývojář pracuje, a druhý využije jeho kód. Tato ekvilibria jsou efektivní, tedy maximalizují zisk a minimalizují náklady, ale jsou nespravedlivá -- jeden vývojář se ,,veze'' na práci druhého. Je zde ale také smíšené ekvilibrium, kde  každý hráč pracuje s pravděpodobností $\alpha^* = 1-c/v$. S rostoucím počtem hráčů se situace nijak výrazně nemění. Veškerou práci stále provede jeden z nich a ostatní ji jen využijí.
+
+	Problémem této hry je, že hráč, který program vytvoří, nemá z jeho zveřejnění žádný užitek, jeho zisk je stejný, jako kdyby hrál sám. Obrazem této hry ve skutečnosti pak je silně modulární program, kde jakákoliv změna výrazně ovlivní ostatní části systému. Taková situace vyžaduje hluboké znalosti celku, což odrazuje potenciální přispěvatele, a rovněž autor se bude zdráhat přijmout cizí úpravy.
+
+	Na druhou stranu, u modulárních systémů může autor jednoho modulu profitovat z kódu napsaného jiným hráčem pro jiný modul. Je tedy na první pohled patrné, že modulární architektura vytváří příležitosti pro spolupráci vývojářů na různých částech systému.
+
+	Uvažujme nyní hru dvou hráčů s perfektní informací. Systém, který chtějí hráči použít, zahrnuje platformu a dva moduly, $A$ a $B$. Platforma je v době hry již napsaná a tedy cena za její vytvoření již není podstatná. Moduly je však třeba vytvořit.
+
+	Z definice modulů je možné na každém z nich pracovat nezávisle. Každý z těchto modulů zvedne hodnotu systému o $v/2$ za cenu $c/2$. Celkem tak zisk celého systému zůstává $v$ a náklady $c$, jako u monolitického systému. Rozdíl však je, že platforma a libovolný modul je funkční celek, a lze mít zisk ze systému i pokud ne všechny moduly jsou implementovány.
+
+	Každý hráč si může nezávisle vybrat, za nebude vytvářet nic, či zda vytvoří modul $A$, či $B$.
+
+	Výsledná hra je zobrazena v tabulce~\ref{tab:involuntary-altruism-modules-perfect-information}. Hra má dvě Nashova ekvilibria (zvýrazněno šedou barvou), ve kterých si hráči rozdělí práci na modulech. V těchto ekvilibriích je pro oba vývojáře jednoznačně výhodnější se do vývoje zapojit, než zůstat stranou a buď se jen vézt, nebo implementovat nezávislé řešení. Jejich zisk je totiž $v - c/2$, oproti $v-c$ pro izolovanou činnost.
+
+	\begin{Figure}
+	\label{tab:involuntary-altruism-modules-perfect-information}
+	\begin{center}
+	\begingroup
+	\medmuskip=0mu
+	\thickmuskip=0mu
+		\makeatletter\def\f@size{8}
+	\begin{tabular}{r| c c c}
+			& $Nic$ & $A$ & $B$ \\
+			\hline
+		$Nic$ &
+		 	$0,0$ &
+			$\frac{1}{2}v, \frac{1}{2}(v-c)$ &
+			$\frac{1}{2}v, \frac{1}{2}(v-c)$ \\
+		$A$ &
+			$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+			$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ &
+			\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ \\
+		$B$ &
+			$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+			\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ &
+			$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ \\
+	\end{tabular}
+	\endgroup
+	\end{center}
+	\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu dvou hráčů se dvěma moduly.}
+	\end{Figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shrnutí}
 
