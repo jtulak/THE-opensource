@@ -17,7 +17,6 @@
 Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje (a konkurent tak kvůli delšímu vývoji získá méně zákazníků), má takováto hra jediné Nashovo ekvilibrium (uzavřít,uzavřít), tedy zisk $(-1,-1)$.
 
 \begin{Figure}
-\label{tab:classic-prisoner}
 \begin{center}
 \begin{tabular}{r| c c}
 		& Otevřít & Uzavřít \\
@@ -27,12 +26,12 @@ Open source se přitom zásadně liší od zažitých představ a předpokladů 
 \end{tabular}
 \end{center}
 \captionof{table}{Klasická představa hry o otevřenost vývoje.}
+\label{tab:classic-prisoner}
 \end{Figure}
 
 Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme, že zisk pro hráče je jeho původní zisk plus polovina zisku soupeře.
 
 \begin{Figure}
-\label{tab:new-prisoner}
 \begin{center}
 \begin{tabular}{r| c c}
 		& Otevřít & Uzavřít \\
@@ -42,6 +41,7 @@ Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme
 \end{tabular}
 \end{center}
 \captionof{table}{Upravená verze hry o otevřenost vývoje.}
+\label{tab:new-prisoner}
 \end{Figure}
 
 Tato verze hry, podle tabulky~\ref{tab:new-prisoner}, má Nashova ekvilibria dvě. Stále zůstává (uzavřít,uzavřít), nicméně (otevřít,otevřít) je nyní také ekvilibrium, které navíc poskytuje vůbec největší zisk pro každého hráče~\cite{network-effects-opensource}.
@@ -150,7 +150,6 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	Ve svém modelu autoři využívají pojem {\em nedobrovolný altruismus}. Ten lze charakterizovat tak, že práce každého hráče přispěje pozitivně k zisku všech ostatních bez ohledu na to, zda daný hráč chce ostatním pomoci, či ne~\cite[kap. 3]{architecture-opensource}. To reflektuje situaci, kdy jeden hráč vytvoří nějaký software, který je volně zveřejněn, a který může kdokoliv využít aniž by tím jakkoliv ovlivnil zisk autora. Nejlépe to lze ilustrovat hrou v tabulce~\ref{tab:involuntary-altruism-nf}. Hráč má zisk $v$ z použití nějakého software, a cena za vytvoření takového software je $c$. Předpokládáme, že $v > c$, takže pokud by byli hráči izolovaní, vytvořili by oba svou verzi daného programu.
 
 	\begin{Figure}
-	\label{tab:involuntary-altruism-nf}
 	\begin{center}
 	\begin{tabular}{r| c c}
 			& Použít cizí & Vytvořit \\
@@ -160,6 +159,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	\end{tabular}
 	\end{center}
 	\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu. Symetrická, jednokolová hra dvou hráčů.}
+	\label{tab:involuntary-altruism-nf}
 	\end{Figure}
 
 	Tato hra má dvě Nashova ekvilibria v ryzích strategiích, kdy jeden vývojář pracuje, a druhý využije jeho kód. Tato ekvilibria jsou efektivní, tedy maximalizují zisk a minimalizují náklady, ale jsou nespravedlivá -- jeden vývojář se ,,veze'' na práci druhého. Je zde ale také smíšené ekvilibrium, kde  každý hráč pracuje s pravděpodobností $\alpha^* = 1-c/v$. S rostoucím počtem hráčů se situace nijak výrazně nemění. Veškerou práci stále provede jeden z nich a ostatní ji jen využijí.
@@ -170,39 +170,48 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Uvažujme nyní hru dvou hráčů s perfektní informací. Systém, který chtějí hráči použít, zahrnuje platformu a dva moduly, $A$ a $B$. Platforma je v době hry již napsaná a tedy cena za její vytvoření již není podstatná. Moduly je však třeba vytvořit.
 
+
+		\begin{Figure}
+		\begin{center}
+		\begingroup
+		\medmuskip=0mu
+		\thickmuskip=0mu
+			\makeatletter\def\f@size{8}
+		\hskip-0.7cm
+		\begin{tabular}{r| c c c}
+				& $Nic$ & $A$ & $B$ \\
+				\hline
+			$Nic$ &
+			 	$0,0$ &
+				$\frac{1}{2}v, \frac{1}{2}(v-c)$ &
+				$\frac{1}{2}v, \frac{1}{2}(v-c)$ \\
+			$A$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ &
+				\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ \\
+			$B$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+				\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ \\
+		\end{tabular}
+		\endgroup
+		\end{center}
+		\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu dvou hráčů se dvěma moduly.}
+		\label{tab:involuntary-altruism-modules-perfect-information}
+		\end{Figure}
+
 	Z definice modulů je možné na každém z nich pracovat nezávisle. Každý z těchto modulů zvedne hodnotu systému o $v/2$ za cenu $c/2$. Celkem tak zisk celého systému zůstává $v$ a náklady $c$, jako u monolitického systému. Rozdíl však je, že platforma a libovolný modul je funkční celek, a lze mít zisk ze systému i pokud ne všechny moduly jsou implementovány.
 
 	Každý hráč si může nezávisle vybrat, za nebude vytvářet nic, či zda vytvoří modul $A$, či $B$.
 
 	Výsledná hra je zobrazena v tabulce~\ref{tab:involuntary-altruism-modules-perfect-information}. Hra má dvě Nashova ekvilibria (zvýrazněno šedou barvou), ve kterých si hráči rozdělí práci na modulech. V těchto ekvilibriích je pro oba vývojáře jednoznačně výhodnější se do vývoje zapojit, než zůstat stranou a buď se jen vézt, nebo implementovat nezávislé řešení. Jejich zisk je totiž $v - c/2$, oproti $v-c$ pro izolovanou činnost.
 
-	\begin{Figure}
-	\label{tab:involuntary-altruism-modules-perfect-information}
-	\begin{center}
-	\begingroup
-	\medmuskip=0mu
-	\thickmuskip=0mu
-		\makeatletter\def\f@size{8}
-	\begin{tabular}{r| c c c}
-			& $Nic$ & $A$ & $B$ \\
-			\hline
-		$Nic$ &
-		 	$0,0$ &
-			$\frac{1}{2}v, \frac{1}{2}(v-c)$ &
-			$\frac{1}{2}v, \frac{1}{2}(v-c)$ \\
-		$A$ &
-			$\frac{1}{2}(v-c), \frac{1}{2}v$ &
-			$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ &
-			\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ \\
-		$B$ &
-			$\frac{1}{2}(v-c), \frac{1}{2}v$ &
-			\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ &
-			$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ \\
-	\end{tabular}
-	\endgroup
-	\end{center}
-	\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu dvou hráčů se dvěma moduly.}
-	\end{Figure}
+	Po zobecnění této hry na hru N hráčů a $j$ kol autoři dokazují dvě tvrzení: (1) Že ve hře s úplnou informací a ryzími strategiemi budou všechny moduly vytvořeny právě jednou. (2) A že nespravedlivá ekvilibria, kde není práce rovnoměrně rozdělena mezi hráče, nejsou sub-game perfektní.
+
+	Důkaz prvního tvrzení je veden proti strategickému profilu, kde některý modul není naprogramován. Zřejmě v takovém profilu může některý hráč, který nic nedělá, zlepšit svůj zisk tím, že chybějící modul naprogramuje. Tedy takový profil nemůže být ekvilibriem.
+
+	Druhé tvrzení pak dokazují na příkladu s různě ochotnými vývojáři, kdy někteří čekají, jestli za ně neudělá práci někdo jiný, zatímco další začnou pracovat ihned a v každém kole naprogramují jeden modul. Tato situace se dá chápat jako hrozba (,,nebudu pracovat''), ovšem je hrozbou nedůvěryhodnou, neboť v posledním kole tito hráči musí naprogramovat nějaký modul, jak bylo ukazuje předchozí tvrzení. V takové situaci je ovšem i pro vývojáře, kteří by začali pracovat hned, lepší počkat na poslední kolo stejně jako ostatní~\cite[kap. 4.1]{architecture-opensource}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shrnutí}
