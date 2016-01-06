@@ -49,6 +49,7 @@
 \linespread{1.05} % Palatino needs more space between lines
 \usepackage{microtype}
 \usepackage{lmodern}
+\usepackage{amsmath}
 
 
 % ------
@@ -82,7 +83,7 @@
 \usepackage{titlesec}
 \renewcommand\thesection{\Roman{section}}
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
-\titleformat{\subsection}{\scshape\centering}{\thesection.}{1em}{}
+\titleformat{\subsection}[block]{\scshape\centering}{\thesection.\thesubsection.}{1em}{}
 
 % ------% Header/footer
 % Header/footer
