@@ -6,19 +6,57 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) V této zprávě se tedy pokouším shrnout dostupné materiály k tématu, které se mi podařilo nalézt.
+\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě se tedy pokouším shrnout některé dostupné materiály k tématu.
 \end{abstract}
 
 \listoftodos
 
 \begin{multicols}{2}
-\lettrine[nindent=0em,lines=3]{P}rotože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji. V případě, že jsem neměl možnost nějaké tvrzení ověřit, např. pro nedostupnost původního materiálu, tuto skutečnost poznačuji.
+\lettrine[nindent=0em,lines=3]{O}{pen source} ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci.\todo{Some opening, more about used sources...} V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
 
-Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, tedy zkráceně svobodný přístup, distribuce a modifikace.\todo{Some opening, more about used sources...}
+Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě, ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem, ale sám nic nepřispěje, má takováto hra Nashovo ekvilibrium (uzavřít,uzavřít), tedy zisk $(-1,-1)$.
+
+\begin{Figure}
+\label{tab:classic-prisoner}
+\begin{center}
+\begin{tabular}{r| c c}
+		& Otevřít & Uzavřít \\
+		\hline
+	Otevřít & $1,1$ & $-2,2$ \\
+	Uzavřít & $2,-2$ & $-1,-1$ \\
+\end{tabular}
+\end{center}
+\captionof{table}{Klasická představa hry o otevřenost vývoje.}
+\end{Figure}
+
+Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme, že zisk pro hráče je jeho původní zisk plus polovina zisku soupeře.
+
+\begin{Figure}
+\label{tab:new-prisoner}
+\begin{center}
+\begin{tabular}{r| c c}
+		& Otevřít & Uzavřít \\
+		\hline
+	Otevřít & $1.5,1.5$ & $-1,1$ \\
+	Uzavřít & $1,-1$ & $-1.5,-1.5$ \\
+\end{tabular}
+\end{center}
+\captionof{table}{Upravená verze hry o otevřenost vývoje.}
+\end{Figure}
+
+Tato verze hry, podle tabulky~\ref{tab:new-prisoner}, má Nashova ekvilibria dvě. Stále zůstává (uzavřít,uzavřít), nicméně (otevřít,otevřít) je nyní také ekvilibrium, které navíc poskytuje vůbec největší zisk pro každého hráče~\cite{network-effects-opensource}.
+
+Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků.
+
+
+Protože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Open-source vs proprietární software}
+\label{ch:opensource-vs-proprietary}
 	{\em Tato kapitola vychází ze zprávy Lock-In Strategy in Software Competition, K. Zhu a Z. Zhou~\cite{lock-in-competition}.}
 
 	Podle dotazníku provedeného Computer World v roce 2004 byl \uv{vendor lock-in}\footnote{{\em Vendor lock-in} popisuje situaci, kdy zákazník je nucen pokračovat v užívání konkrétního produktu/dodavatele i při existenci alternativ, protože přechod na jiné řešení či jiného dodavatele by byl pro zákazníka velmi nákladný. Možností, jak může dodavatel lock-in dosáhnout je vícero: (1) systém je navržen tak, aby nebyl kompatibilní s alternativními řešeními od ostatních dodavatelů; (2) využíváním uzavřených architektur a proprietárních standardů; (3) Licenční a patentovou politikou.} jednou z hlavních obav mezi IT odborníky ohledně nastupujícího trendu cloud computingu~\cite{computer-world-2004}. Ve výzkumu provedeném North Bridge v roce 2015 je snaha vyhnout se vendor lock-in zmiňována jako jeden z důvodů pro výběr open-source řešení~\cite{survey-2015}.
@@ -45,7 +83,7 @@ Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném
 	Dva dodavatelé software soupeří na jednom trhu. Licencují svůj software pro dvě období, konkrétně současnost a budoucnost. Ceny oznamují současně na začátku každého období. Dodavatelé nemohou nastavit odlišné ceny různým typům zákazníků, protože typ je zákazníkova privátní informace, dodavatelé jej neznají. Software je označen A, nebo O, kde A znamená proprietární software a O je open source. Je známo, že softwarové produkty mají nízké nebo nulové mezní náklady\footnote{Náklady při výrobě dodatečné jednotky produktu, v tomto případě prodeji jedné licence.} (Shapiro a Varian 1999). Pro technické zjednodušení, mezní náklady obou dodavatelů byly normalizovány na nulu. Protože open source může být získán zdarma či za velmi nízkou cenu (zaslání DVD, ...), předpokládáme, že:
 
 	\vspace{10pt}
-	\noindent{\sc Předpoklad 1.}{\em Cena získání OSS je normalizována na nulu.}
+	\noindent{\sc Předpoklad 1.}~{\em Cena získání OSS je normalizována na nulu.}
 	\vspace{10pt}
 
 	Nechť $p_{it}: i \in {A,O}, t \in {1,2}$ značí cenu získání software $i$ v období $t$. Z předpokladu 1 máme $p_{O1} = p_{O2} = 0$. Protože $p_{O1}$ a $p_{O2}$ nejsou v této zprávě strategické rozhodovací proměnné, nastavujeme je na nulu. Později ukážeme, že i pokud bychom nastavili jejich hodnotu na pozitivní nenulovou konstantu, neovlivní to podstatně výsledek.
@@ -53,7 +91,7 @@ Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném
 	Open source a proprietární software jsou jasně rozlišené. Schmidt a Schnitzer (2002) toto rozlišení modelovali jako horizontální odlišnost\footnote{{\em Horizontal differentiation} -- situace, kdy odlišnost dvou produktů nelze jednoduše ohodnotit např. kvalitativně. Příkladem může být třeba kvalitativně totožný produkt nabízený ve dvou barevných provedeních. Lze rovněž definovat jako {\em\uv{pokud jsou všechny varianty nabízeny za stejnou cenu, je nenulová poptávka po každé z nich}} (Cremer a Thisse 1991, p. 383). Vertikální odlišnost pak poskytuje jednoznačně ohodnotitelné a uspořádatelné srovnání.}. Podle literatury (Caminal a Matutes 1990, Klemperer 1995, Marinoso 2001) zahrnujeme tento rozdíl pomocí {\em modelu horizontální odlišnosti}.
 
 	\vspace{10pt}
-	\noindent{\sc Předpoklad 2.}{\em OSS a proprietární software jsou horizontálně odlišné.}
+	\noindent{\sc Předpoklad 2.}~{\em OSS a proprietární software jsou horizontálně odlišné.}
 	\vspace{10pt}
 
 	Tedy pokud $A$ i $O$ jsou nabízeny za stejnou cenu, někteří zákazníci zvolí $A$, zatímco jiní $O$, protože jinak hodnotí vlastnosti produktu. Například OSS lze snadněji upravit pro konkrétní potřeby, zatímco proprietární software mívá kvalitnější uživatelské rozhraní a dokumentaci. Jako příklad může posloužit srovnání J2EE a .NET. Estes a Maxime (2003) shrnují seznam srovnání mezi J2EE a .NET a konstatují, že výběr záleží na konkrétních potřebách a preferencích  uživatele.
@@ -61,13 +99,13 @@ Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném
 	Motivování takovým pozorovnáním v praxi, přidáváme další rozměr heterogenity: {\em reservation utility}\footnote{Pro {\em reservation utility} se mi nepodařilo nalézt vhodné české slovo. Význam tohoto pojmu by se dal volně větou přeložit jako \uv{využití nasmlouvané kapacity}. V případě SW to odpovídá intenzitě využívání a případně i počtu licencí.}\todo{Czech translation?}, což náš model činí dvourozměrným, na rozdíl od literatury, která používá jednorozměrný horizontální, příp. jednorozměrný vertikální model odlišnosti. Pro každý software totiž mají různí zákazníci různé využití. Někteří jej využívají intenzivně, pro jiné je jen okrajovým nástrojem. To vede k odlišné {\em reservation utility} mezi zákazníky kvůli jejich rozdílům v ohodnocení, rozpočtu, či ceně. (Gartner Researarch Note 2003).
 
 	\vspace{10pt}
-	\noindent{\sc Předpoklad 3.}{\em Zákazníci mají vertikálně odlišnou svou reservation utitlity.}
+	\noindent{\sc Předpoklad 3.}~{\em Zákazníci mají vertikálně odlišnou svou reservation utitlity.}
 	\vspace{10pt}
 
 	Protože model zachycuje heterogenitu ve dvou dimenzích, jsou zákazníci matematicky modelování jako dvojice $r$ a $\theta$, kde $r$ představuje reservation utility a $\theta$, nezávisle na $r$, vzdálenost jejich preference od produktu $A$ (tedy $(1-\theta)$ je vzdálenost od $O$.) Zákazníci jsou uniformě distribuovaní v rozsahu $[0,1]$ pro $\theta$ a pro $r$ v rozsahu $[R, (1+\lambda)R]$, kde $1/\lambda R$ je funkce hustoty, kde $R$ je spodní hranice zákazníkovy reservation utility.
 
 		\vspace{10pt}
-		\noindent{\sc Předpoklad 4.}{\em Zákazníci jsou reprezentováni $(r,\theta)$, kde $\theta \sim U(0,1)$ a $r \sim U(R, R(1+\lambda))$.}
+		\noindent{\sc Předpoklad 4.}~{\em Zákazníci jsou reprezentováni $(r,\theta)$, kde $\theta \sim U(0,1)$ a $r \sim U(R, R(1+\lambda))$.}
 		\vspace{10pt}
 
 	Pokud zákazník $(r,\theta)$ vybere řešení $A$, pak jeho zisk je $r-\theta - p_{At})$ pro období $t$. Pokud si vybere $O$, pak jeho zisk je $r-(1-\theta)$. Pokud si nevybere nic, jeho zisk je nula. {\em Celkový zisk} je suma zisků za obě období.
@@ -75,7 +113,7 @@ Open-source je v textu, není-li řečeno jinak, chápán ve smyslu definovaném
 	Ve hře jsou dvě období. Na začátku prvního oba dodavatelé zároveň oznámí svou cenu $p_{i1}$. Zákazníci si vytvoří racionální odhadad ceny $p_{i2}$ pro další období, porovnají celkové zisky za obě periody a vyberou si jedno řešení. Ve druhém období dodavatelé provedou upgrade svého software a zaúčtují zákazníkům $p_{i2}$. Zákazník může nadále platit za dříve vybrané řešení, zrušit předplatné (a využívat starou verzi), nebo přejít k druhému řešení.
 
 		\vspace{10pt}
-		\noindent{\sc Předpoklad 5.}{\em Zákazník při přechodu na jiný než původně vybraný software bude muset zaplatit cenu $s (s\geq0)$.}
+		\noindent{\sc Předpoklad 5.}~{\em Zákazník při přechodu na jiný než původně vybraný software bude muset zaplatit cenu $s (s\geq0)$.}
 		\vspace{10pt}
 
 	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
