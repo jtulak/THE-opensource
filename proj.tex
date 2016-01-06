@@ -18,11 +18,11 @@
 \renewcommand{\marginpar}{\marginnote} % so we can put it in footnotes
 \usepackage{todonotes}
 
-\def\Tpapername{Teorie her a open-source}
+\def\Tpapername{Teorie her a open source}
 \def\Tauthor{Jan Ťulák}
 \def\Tauthoremail{xtulak00@stud.fit.vutbr.cz}
-\def\Tuniversity{VUT Brno, FIT}
-\def\Tpaper{Projekt THE}
+\def\Tuniversity{FIT VUT Brno}
+\def\Tpaper{Projekt do kurzu Teorie Her (THE)}
 \def\Tdate{Leden 2016}
 
 % ------
@@ -66,11 +66,22 @@
 % ------% Header/footer
 % Header/footer
 \usepackage{fancyhdr}
+\fancypagestyle{firststyle}
+{
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\small\Tpaper\\\Tdate}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+}
+
  \pagestyle{fancy}
  \fancyhead{}
  \fancyfoot{}
- \fancyhead[C]{\Tpaper\hspace{3pt}$\bullet$\hspace{3pt}\Tuniversity\hspace{3pt}$\bullet$\hspace{3pt}\Tdate}
- \fancyfoot[RO,LE]{\thepage}
+ %\fancyhead[C]{\Tpaper\hspace{3pt}$\bullet$\hspace{3pt}\Tdate}
+ \fancyhead[L]{\small \textbf{\Tauthor:}~{\em \Tpapername}}
+ \fancyhead[R]{\thepage}
+ %\fancyfoot[RO,LE]{\thepage}
 
 
 % ------
@@ -79,20 +90,21 @@
 
 % ------
 % Maketitle metadata
-\title{\vspace{-15mm}%
+\title{\vspace{-8mm}%
  \fontsize{24pt}{10pt}\selectfont
  \textbf{\Tpapername}
  \vspace{-10pt}
  }
 \author{%
  \large
- \textsc{\Tauthor}, \href{mailto:\Tauthoremail}{\Tauthoremail}\\
+ \textsc{\Tauthor}\\
+ \small \Tuniversity, \href{mailto:\Tauthoremail}{\Tauthoremail}\\
  \vspace{-20pt}
  }
 \date{}
 
 \begin{document}
 \maketitle
-\thispagestyle{fancy}
+\thispagestyle{firststyle}
 \input{content}
 \end{document}
