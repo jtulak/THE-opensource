@@ -6,7 +6,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě se tedy pokouším shrnout některé dostupné materiály k tématu.
+\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě shrnuji dva články na téma teorie her a Open Source.
 \end{abstract}
 
 \listoftodos
@@ -29,7 +29,7 @@ Open source se přitom zásadně liší od zažitých představ a předpokladů 
 \label{tab:classic-prisoner}
 \end{Figure}
 
-Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme, že zisk pro hráče je jeho původní zisk plus polovina zisku soupeře.
+Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme, že zisk pro hráče je její původní zisk plus polovina zisku soupeře.
 
 \begin{Figure}
 \begin{center}
@@ -46,7 +46,7 @@ Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme
 
 Tato verze hry, podle tabulky~\ref{tab:new-prisoner}, má Nashova ekvilibria dvě. Stále zůstává (uzavřít,uzavřít), nicméně (otevřít,otevřít) je nyní také ekvilibrium, které navíc poskytuje vůbec největší zisk pro každého hráče~\cite{network-effects-opensource}.
 
-Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků. V kapitole~\ref{ch:architecture-opensource} si ukážeme ještě jiný alternativní model, který neuvažuje soupeření, a tedy zisk hráče je stejný (odpovídá námaze na vytvoření), ať už jeho protihráč jeho kód využije, či ne.
+Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků. V kapitole~\ref{ch:architecture-opensource} si ukážeme ještě jiný alternativní model, který neuvažuje soupeření, a tedy zisk hráče je stejný (odpovídá námaze na vytvoření programu), ať už jeho protihráč tento program využije, či ne.
 
 Protože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji.
 
@@ -55,7 +55,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Open-source vs proprietární software}
-\label{tab:new-prisoner}
+\label{ch:opensource-vs-proprietary}
 	{\em Tato kapitola vychází ze zprávy Lock-In Strategy in Software Competition, K. Zhu a Z. Zhou~\cite{lock-in-competition}.}
 
 	Podle dotazníku provedeného Computer World v roce 2004 byl \uv{vendor lock-in}\footnote{{\em Vendor lock-in} popisuje situaci, kdy zákazník je nucen pokračovat v užívání konkrétního produktu/dodavatele i při existenci alternativ, protože přechod na jiné řešení či jiného dodavatele by byl pro zákazníka velmi nákladný. Možností, jak může dodavatel lock-in dosáhnout je vícero: (1) systém je navržen tak, aby nebyl kompatibilní s alternativními řešeními od ostatních dodavatelů; (2) využíváním uzavřených architektur a proprietárních standardů; (3) Licenční a patentovou politikou.} jednou z hlavních obav mezi IT odborníky ohledně nastupujícího trendu cloud computingu~\cite{computer-world-2004}. Ve výzkumu provedeném North Bridge v roce 2015 je snaha vyhnout se vendor lock-in zmiňována jako jeden z důvodů pro výběr open-source řešení~\cite{survey-2015}.
@@ -163,7 +163,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 		\label{tab:involuntary-altruism-nf}
 		\end{Figure}
 
-		Tato hra má dvě Nashova ekvilibria v ryzích strategiích, kdy jeden vývojář pracuje, a druhý využije jeho kód. Tato ekvilibria jsou efektivní, tedy maximalizují zisk a minimalizují náklady, ale jsou nespravedlivá -- jeden vývojář se ,,veze'' na práci druhého. Je zde ale také smíšené ekvilibrium, kde  každý hráč pracuje s pravděpodobností $\alpha^* = 1-c/v$. S rostoucím počtem hráčů se situace nijak výrazně nemění. Veškerou práci stále provede jeden z nich a ostatní ji jen využijí.
+		Tato hra má dvě Nashova ekvilibria v ryzích strategiích, kdy jedna vývojářka pracuje, a druhá využije její kód. Tato ekvilibria jsou efektivní, tedy maximalizují zisk a minimalizují náklady, ale jsou nespravedlivá -- jeden vývojář se ,,veze'' na práci druhého. Je zde ale také smíšené ekvilibrium, kde  každý hráč pracuje s pravděpodobností $\alpha^* = 1-c/v$. S rostoucím počtem hráčů se situace nijak výrazně nemění. Veškerou práci stále provede jeden z nich a ostatní ji jen využijí.
 
 		Problémem této hry je, že hráč, který program vytvoří, nemá z jeho zveřejnění žádný užitek, jeho zisk je stejný, jako kdyby hrál sám. Obrazem této hry ve skutečnosti pak je silně modulární program, kde jakákoliv změna výrazně ovlivní ostatní části systému. Taková situace vyžaduje hluboké znalosti celku, což odrazuje potenciální přispěvatele, a rovněž autor se bude zdráhat přijmout cizí úpravy.
 
@@ -218,7 +218,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	\subsection*{Hodnota volby}
 		Až dosud jsme předpokládali hru s úplnou informací, že hodnota systému, modulů, i vynaložená práce byla známá před zahájením hry. Vývoj software, jakožto návrhový proces, však tomuto předpokladu neodpovídá, je to proces s výrazným vlivem nejistoty. Tato nejistota pak způsobuje, že nové návrhy mají charakter volby. Autoři používají definici z moderních finančních teorií a formulují {\em volbu} jako právo, ale ne povinnost, vybrat směr aktivity a získat odpovídající výplatu.
 
-		Nový návrh vytváří možnost, ale ne nezbytnost, dělat něco novým způsobem. To, zda tento návrh bude přijat či ne, pak záleží na přínosu tohoto návrhu, zda je lepší než předchozí (za předpokladu racionality hráčů).
+		Nový návrh vytváří možnost, ale ne nezbytnost, dělat něco novým způsobem. To, zda tento návrh bude přijat či ne, pak záleží na přínosu tohoto návrhu, zda je lepší než předchozí (za předpokladu racionality hráčů). {\em Hodnota volby} tedy vyjadřuje přínos dané alternativy.
 
 		Možnost volby úzce souvisí s modularitou: modulární architektura umožňuje v průběhu času změnit návrh některých modulů bez ohrožení funkcionality systému jako celku. Modulární architektura je tedy ,,tolerantní k nejistotě''~\cite[kap. 2.2]{architecture-opensource}.
 
@@ -230,7 +230,33 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 		$$\Delta Q(X, k) = Q(X,k) - Q(X, k-1)$$
 		Protože pro libovolnou distribuci $X$ je $Q(X,k)$ rostoucí a konklávení, $\Delta Q(X,k)$ je kladné číslo, které se s rostoucím $k$ snižuje.
 
+		Podívejme se nejprve znovu na monolitický systém a dva hráče z tabulky~\ref{tab:involuntary-altruism-nf} (lze vidět i jako modulární systém s právě jedním modulem). Abychom mohli provést srovnání, předpokládejme $Q(X, 1) = v$. Pokud nikdo nepracuje, případně pokud pracuje jen jeden, nedojde k žádné změně. Pokud ale pracují oba dva, pak mají možnost použít ten program, který má větší hodnotu. Očekávaný zisk obou hráčů pak je $Q(X, 1) + \Delta Q(X,2) - c$. Druhý člen tohoto součtu představuje hodnotu volby vytvořenou druhým vývojářem pracujícím na stejném projektu a je striktně kladný.
 
+		Pokud je $\Delta Q(X,2) > c$, pak se (vytvořit, vytvořit) stává ekvilibriem namísto permutací (použít cizí, vytvořit) a všichni hráči pracují.
+
+		Důsledek je, že i bez modularity je za přítomnosti dostatečně vysoké hodnoty volby pro hráče výhodnější se zapojit do vývoje, než se jen zdarma vézt. Důvodem je, že pokud je výsledek návrhu nejistý, pak současná práce více hráčů na tom stejném není nutně zbytečná; izolovaná hráčka ztrácí možnost, že kód vytvořený jiným hráčem bude lepší, než její vlastní.
+
+		Pokud zkombinujeme modularitu s nejistotou představovanou hodnotou volby, zjistíme, že modularita zvyšuje hodnotu jednotlivých voleb, a v kontextu diskutovaného modelu zvýší počet vývojářů kteří v ekvilibriu pracují (pro $N > j$)~\cite[kap. 5.2 a 5.3]{architecture-opensource}.
+
+	\subsection*{Soupeření mezi uzavřeným a otevřeným vývojem}
+		V kapitole 5.4~\cite{architecture-opensource} se autoři krátce zabývají soupeřením mezi uzavřenou společností a otevřeným komunitním vývojem. Ukazují, že dostatečně velká společnost s dostatečným počtem zákazníků může provést větší množství pokusů, tedy lepší hodnotu $Q(X,k)$, než komunitní vývojový proces.
+
+		Zároveň ale dodávají, že zisk z komunitního vývoje nemusí být pouze hodnota vytvořeného systému. V souladu s výsledky prezentovanými v kapitole~\nameref{ch:opensource-vs-proprietary}, taková konkurence vede k lepší {\em cenové disciplíně} proprietární společnosti.
+
+	\subsection*{Další teorie a modely}
+		V kapitolách 6 a 7 se autoři zabývají několika dalšími otázkami. Mimo jiné, jaká je motivace k otevření kódu?
+
+		Až dosud jsme uvažovali hru, kde kód, který vývojář napíše, je na konci kola zveřejněn a začleněn do systému. Skutečný svět však tomuto předpokladu neodpovídá. Jednak autor nějakého kódu není nucen jej zveřejnit\footnote{Neuvažujeme zveřejnění vynucené licencemi jako GNU GPL při distribuci; pokud vývojář použije daný program jen pro sebe, pak i kdyby byl systém jako celek licencovaný pod GPL, autor nemusí své změny nijak zveřejnit.} a jednak existuje nenulová cena za komunikaci. Tato cena může být malá, jako třeba napsání jednoho e-mailu, avšak je nenulová. Stejně tak původní autor musí změnu v kódu či nový modul začlenit, což je opět akce s nějakou nenulovou cenou.
+
+		V takovéto situaci, pokud se vrátíme k původní hře dvou hráčů a dvou modulů v tabulce~\ref{tab:involuntary-altruism-modules-perfect-information}, máme následující situaci. Oba hráči se zapojili do hry a vytvořili jeden modul. Programování je hotovo a jeho cenu můžeme nyní již neuvažovat, protože byla zaplacena (již potřebný čas práci na modulu věnovali). Nyní se ale musí rozhodnout, zda svou práci zveřejní. Protože zveřejnění přináší náklady, Nashovo ekvilibrium bude (nezveřejnit, nezveřejnit).
+
+		Zveřejnění však může přinést i nějaký zisk. Může jít například o zvýšení reputace, osobní zisk v podobě vědomí, že hráč někomu pomohl, či vzájemná výpomoc do budoucna při opakované hře. Obzvláště tento poslední bod se ukazuje jako dostatečně výrazný na to, aby převážil náklady na zveřejnění.
+
+		Z tohoto modelu ovšem plyne, že benefity ze zveřejnění musí překonat pouze náklady na komunikaci a zveřejnění samotné, nemají žádný vliv na napsání kódu. Rovněž technologie a prostředky použité pro komunikaci mají výrazný vliv, neboť stanovují cenu za zveřejnění a tedy míru nezbytných benefitů. V kontextu Open Source mluvíme o elektronické komunikaci,  verzovacích nástrojích typu Git či CVS, issue trackerech a podobně.
+
+		V závěru se pak autoři zamýšlí a srovnávají svůj model s jinými studiemi. Konkrétně je jmenován například essej {\em The Cathedral and the Bazaar} od Erica S. Raymonda. Ukazují, že jejich model formalizuje a rozšiřuje Raymondovu teorii a že alespoň teoreticky lze minimalizovat některé problémy, na které Raymond ve svém díle poukazuje (uživatelé, kteří nijak nepřispívají).
+
+	 	Při srovnání s dílem J. Lernera a J. Tirole ({\em Some Simple Economics of Open Source}) pak poukazují na to, že pokud reputace získaná aktivitou v Open Source projektech je přínosem pro hodnotu vývojáře na pracovním trhu před potenciálním zaměstnavatelem, pak toto přispívání je ekonomicky zcela racionální, a skutečné otázky Open Source se týkají nikoliv motivace, ale ,,vedení, organizovaní a správy'', a Baldwinová a Clark poznamenávají, že otázka ,,jaká je vhodná architektura'' může být do tohoto seznamu přidána.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
