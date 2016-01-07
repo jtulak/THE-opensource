@@ -60,7 +60,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Open-source vs proprietární software}
 \label{ch:opensource-vs-proprietary}
-	{\em Tato kapitola vychází ze zprávy Lock-In Strategy in Software Competition, K. Zhu a Z. Zhou~\cite{lock-in-competition}.}
+	\noindent {\em Tato kapitola vychází ze zprávy Lock-In Strategy in Software Competition, K. Zhu a Z. Zhou~\cite{lock-in-competition}.}
 
 	Podle dotazníku provedeného Computer World v roce 2004 byl \uv{vendor lock-in}\footnote{{\em Vendor lock-in} popisuje situaci, kdy zákazník je nucen pokračovat v užívání konkrétního produktu/dodavatele i při existenci alternativ, protože přechod na jiné řešení či jiného dodavatele by byl pro zákazníka velmi nákladný. Možností, jak může dodavatel lock-in dosáhnout je vícero: (1) systém je navržen tak, aby nebyl kompatibilní s alternativními řešeními od ostatních dodavatelů; (2) využíváním uzavřených architektur a proprietárních standardů; (3) Licenční a patentovou politikou.} jednou z hlavních obav mezi IT odborníky ohledně nastupujícího trendu cloud computingu~\cite{computer-world-2004}. Ve výzkumu provedeném North Bridge v roce 2015 je snaha vyhnout se vendor lock-in zmiňována jako jeden z důvodů pro výběr open-source řešení~\cite{survey-2015}.
 
@@ -81,7 +81,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	Následující podkapitola popisuje použitý model a jeho předpoklady.
 
 	\subsection*{Model}
-	{\em Tato podkapitola je zkráceným překladem. Zdroje jsou uvedeny tak jako v původním textu.}
+	\noindent {\em Tato podkapitola je zkráceným překladem. Zdroje jsou uvedeny tak jako v původním textu.}
 
 	Dva dodavatelé software soupeří na jednom trhu. Licencují svůj software pro dvě období, konkrétně současnost a budoucnost. Ceny oznamují současně na začátku každého období. Dodavatelé nemohou nastavit odlišné ceny různým typům zákazníků, protože typ je zákazníkova privátní informace, dodavatelé jej neznají. Software je označen A, nebo O, kde A znamená proprietární software a O je open source. Je známo, že softwarové produkty mají nízké nebo nulové mezní náklady\footnote{Náklady při výrobě dodatečné jednotky produktu, v tomto případě prodeji jedné licence.} (Shapiro a Varian 1999). Pro technické zjednodušení, mezní náklady obou dodavatelů byly normalizovány na nulu. Protože open source může být získán zdarma či za velmi nízkou cenu (zaslání DVD, ...), předpokládáme, že:
 
@@ -122,7 +122,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců, a další. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
 
 	\subsection*{Výsledky modelu}
-	{\em V této kapitole shrnuji výsledky získané z výše popsaného modelu, což zahrnuje kapitoly 3, 4, 5 a 6 původní zprávy.}
+	\noindent {\em V této podkapitole shrnuji výsledky získané z výše popsaného modelu, což zahrnuje kapitoly 3, 4, 5 a 6 původní zprávy.}
 
 	Nejprve se zaměřme na do budoucna uvažující zákazníky, kteří očekávají, že v případě $A$ budou platit v druhém období vyšší cenu. Pokud dodavatel $A$ dokáže správně nastavit své ceny, pak ve druhém období žádný zákazník nezmění využívaný produkt z $A$ na $O$, ale ani opačně, neboť zákazníci, kteří si $A$ vybrali, takové zvýšení předpokládali a započítali ho k ceně v prvním období. V případě zákazníků, kteří si naopak vybrali $O$ žádný důvod k přechodu není, neboť jejich cena se nezměnila~\cite[kap. 3: Lemma 1]{lock-in-competition}.
 
@@ -145,7 +145,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vliv architektury systému na vývojový proces v open-source}
 \label{ch:architecture-opensource}
-	{\em Tato kapitola vychází z článku The Architecture of Participation od C. Baldwin a K. Clark~\cite{architecture-opensource}.}
+	\noindent {\em Tato kapitola vychází z článku The Architecture of Participation od C. Baldwin a K. Clark~\cite{architecture-opensource}.}
 
 	Autoři tohoto článku si kladou otázku, jaký vliv má modularita (či monolitičnost) na atraktivitu daného projektu pro další vývojáře, kteří se potenciálně mohou zapojit do vývoje. Modularitu pro účely tohoto článku definují tak, že {\em komplexní systém vykazuje modularitu v návrhu, jestliže jeho části mohou být implementovány nezávisle, ale pracují společně a podporují celek.} Tato modularita nemusí být nutně reflektována {\em runtime} modularitou výsledného kódu~\cite[kap. 2.1]{architecture-opensource}
 
@@ -272,9 +272,6 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	Je tedy pravděpodobné, že počet studií a článků spojujících teorii her a open source bude do budoucna růst.
 
 
-
-\subsection*{Poděkování}
-Lorem ipsum foo bar, jestli seženu někoho, kdo si to přečte a najde chyby.
 
 
 
