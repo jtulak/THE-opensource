@@ -6,17 +6,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-\noindent Navzdory stále rostoucímu významu open-source v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě shrnuji dva články na téma teorie her a Open Source.
+\noindent Navzdory stále rostoucímu významu open source v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě shrnuji dva články na téma teorie her a open source.\\
+\\
+\noindent Klíčová slova: open source, proprietární software, teorie her, soupeření, motivace, vězňovo dilema, vendor lock-in,
 \end{abstract}
 
 %\listoftodos
 \hrulefill
 \begin{multicols}{2}
-\lettrine[nindent=0em,lines=3]{O}{pen source} ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci. V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
+\lettrine[nindent=0em,lines=3]{O}{pen source}, ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci. V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
 
-Že se open-source a kolaborace stává stále výraznějším fenoménem lze pozorovat na řadě faktorů. Například na konci roku 2015 byla oznámena úzká spolupráce společností Red Hat a Microsoft, dvou konkurentů jak v oblasti operačních systémů, tak virtualizačních řešení, právě na oficiální podpoře konkurenčních produktů na vlastní platformě (např. Red Hat Enterprise Linux na Microsoft Azure)~\cite{redhat-microsoft}. Jiným příkladem může být uvolnění některých produktů Microsoftu jako open-source~\cite{dotnet-github}. V roce 2001 přitom vedení Microsoftu mělo o Linuxu a open-source zcela opačný názor~\cite{ballmer-linux}.
+Že se open source a kolaborace stává stále výraznějším fenoménem lze pozorovat na řadě faktorů. Například na konci roku 2015 byla oznámena úzká spolupráce společností Red Hat a Microsoft, dvou konkurentů jak v oblasti operačních systémů, tak virtualizačních řešení, právě na oficiální podpoře konkurenčních produktů na vlastní platformě (např. Red Hat Enterprise Linux na Microsoft Azure)~\cite{redhat-microsoft}. Jiným příkladem může být uvolnění některých produktů Microsoftu jako open source~\cite{dotnet-github}. V roce 2001 přitom vedení Microsoftu mělo o Linuxu a open source zcela opačný názor~\cite{ballmer-linux}.
 
-Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje (a konkurent tak kvůli delšímu vývoji získá méně zákazníků), má takováto hra jediné Nashovo ekvilibrium (uzavřít, uzavřít), tedy zisk $(-1,-1)$.
+Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto lze snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat hrou v tabulce \ref{tab:classic-prisoner}. V takové hře je spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje (a konkurent tak kvůli delšímu vývoji získá méně zákazníků), má takováto hra jediné Nashovo ekvilibrium (uzavřít, uzavřít), tedy zisk $(-1,-1)$.
 
 \begin{Figure}
 \begin{center}
@@ -24,22 +26,22 @@ Open source se přitom zásadně liší od zažitých představ a předpokladů 
 		& Otevřít & Uzavřít \\
 		\hline
 	Otevřít & $1,1$ & $-2,2$ \\
-	Uzavřít & $2,-2$ &\cellcolor{gray!20}  $-1,-1$ \\
+	Uzavřít & $2,-2$ &\cellcolor{gray!25}  $-1,-1$ \\
 \end{tabular}
 \end{center}
 \captionof{table}{Klasická představa hry o otevřenost vývoje.}
 \label{tab:classic-prisoner}
 \end{Figure}
 
-Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme, že zisk pro hráče je její původní zisk plus polovina zisku soupeře.
+Pokud ale budeme uvažovat modifikovanou variantu hry, situace se změní. Řekněme, že zisk pro hráče je její původní zisk plus polovina zisku soupeře. To může odpovídat situaci, kdy se díky použitému kódu zvýší interoperabilita mezi řešeními, nebo kvůli větší intenzitě reklamy na trh přijde více zákazníků, než kdyby na něm byl jen jeden (libovolný) hráč.
 
 \begin{Figure}
 \begin{center}
 \begin{tabular}{r| c c}
 		& Otevřít & Uzavřít \\
 		\hline
-	Otevřít &\cellcolor{gray!20}  $1.5,1.5$ & $-1,1$ \\
-	Uzavřít & $1,-1$ &\cellcolor{gray!20}  $-1.5,-1.5$ \\
+	Otevřít &\cellcolor{gray!25}  $1.5,1.5$ & $-1,1$ \\
+	Uzavřít & $1,-1$ &\cellcolor{gray!25}  $-1.5,-1.5$ \\
 \end{tabular}
 \end{center}
 \captionof{table}{Upravená verze hry o otevřenost vývoje.}
@@ -48,9 +50,9 @@ Pokud ale budeme uvažovat modifikovanou variantu, situace se změní. Řekněme
 
 Tato verze hry, podle tabulky~\ref{tab:new-prisoner}, má Nashova ekvilibria dvě. Stále zůstává (uzavřít, uzavřít), nicméně (otevřít, otevřít) je nyní také ekvilibrium, které navíc poskytuje vůbec největší zisk pro každého hráče~\cite{network-effects-opensource}.
 
-Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků. V kapitole~\ref{ch:architecture-opensource} si ukážeme ještě jiný alternativní model, který neuvažuje soupeření, a tedy zisk hráče je stejný (odpovídá námaze na vytvoření programu), ať už jeho protihráč tento program využije, či ne.
+Jaký model lépe vystihuje skutečnost není jasné. Zřejmě však silně záleží na konkrétním trhu, situaci, a jak je vidět v kapitole~\ref{ch:opensource-vs-proprietary}, chování zákazníků. V kapitole~\ref{ch:architecture-opensource} si ukážeme ještě jeden alternativní model, který neuvažuje soupeření, a tedy zisk hráče je stejný (odpovídá námaze na vytvoření programu), ať už jeho protihráč tento program využije, či ne.
 
-Protože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho či více zdrojů, s dodatečnými informacemi a zdroji.
+Protože tato zpráva vznikla jako shrnutí několika různých textů, které se věnují různým aspektům problematiky, rozdělil jsem ji do dvou kapitol odpovídajících daným zdrojům. Každá kapitola je tedy shrnutím jednoho zdroje s dodatečnými informacemi a poznámkami.
 
 
 
@@ -70,9 +72,9 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	svém článku (1986) ukazuje na duopolistickém soupeření se dvěmi obdobími
 	(\uv{aktuální období} a \uv{budoucí období}) a cenou za změnu dodavatele, že v soupeření o zákazníka mohou dodavatelé nabízet takové slevy pro první období, že celkový zisk z druhého, udržovacího období už nevyrovná ztrátu z prvního~\cite{klemperer-switching-costs,lock-in-competition}.
 
-	Současně obavy z lock-in posilují pozici open-source hnutí v softwarovém průmyslu, protože zákazníci jej vidí jako možnost, jak snížit svou závislost na jednom proprietárním dodavateli~\cite{opensource-advantage}. Podle průzkumu provedeného Computer Economics (2005) je hlavní výhodou použití open source nikoliv snížení nákladů, ale právě snížení závislosti. Podstatným důvodem je, open source neumožňuje vynucený upgrade a software může být podporován a opravován otevřenou komunitou. Konkurence v komunitě snižuje cenu za podporu a udržování staršího software. Naproti tomu výrobci proprietárního software mohou často vydávat nové verze software a ukončovat podporu starších verzí. Tím nutí zákazníky k (často placenému) upgrade a zákazník je na takovém výrobci závislý, neboť jeho jediná alternativa je zůstat s nepodporovanou verzí. Open Source Initiative tvrdí, že \uv{the promise of open source is ... an end to predatory vendor lock-in.}~\cite{OSI} ({\em Příslib open source je ... konec predátorského lock-in.})
+	Současně obavy z lock-in posilují pozici open-source hnutí v softwarovém průmyslu, protože zákazníci jej vidí jako možnost, jak snížit svou závislost na jednom proprietárním dodavateli~\cite{opensource-advantage}. Podle průzkumu provedeného Computer Economics (2005) je hlavní výhodou použití open source nikoliv snížení nákladů, ale právě snížení závislosti. Podstatným důvodem je, že open source neumožňuje vynucený upgrade a software může být podporován a opravován otevřenou komunitou. Konkurence v komunitě totiž snižuje cenu za podporu a udržování staršího software. Naproti tomu výrobci proprietárního software mohou často vydávat nové verze software a ukončovat podporu starších verzí. Tím nutí zákazníky k (často placenému) upgrade a zákazník je na takovém výrobci závislý, neboť jeho jediná alternativa je zůstat s nepodporovanou verzí. Open Source Initiative tvrdí, že \uv{the promise of open source is ... an end to predatory vendor lock-in.}~\cite{OSI} ({\em Příslib open source je ... konec predátorského lock-in.})
 
-	Autoři studie popisované v této kapitole vytvořili dvou-obdobní model inspirovaný prací P. Klempera. V tomto modelu se zákazníci odlišují mezi sebou svými preferencemi a model zahrnuje open source a {\em nestrategický\footnote{Cenu proprietárního software strategicky stanovuje jeho dodavatel. Otevřená komunita se nechová strategicky, nebude tedy lákat zákazníky na nízkou cenu v prvním období, kterou by následně zvýšila~\cite[str. 2]{lock-in-competition}.}, ale důvěryhodný závazek} o budoucích cenách (tj. cena vždy zůstane zdarma), garantovaný OSS licencemi, jako je třeba GNU General Public License (GPL)\footnote{Zde považuji za nutné zdůraznit, že GNU GPL nezakazuje prodej SW~\cite{selling-foss}. Protože však autor nemůže s takovouto zabránit volnému šíření, může se např. několik potenciálních zákazníků spojit a software zakoupit společně. V praxi tedy nemůže nastat situace s monopolní cenou produktu. Pokud ale ani autor, ani žádný zákazník neposkytne získaný software zdarma někomu dalšímu, cena nemůže být nulová.}~\cite[str. 2]{lock-in-competition}. Rovněž protože zákazník má k dispozici zdrojové kódy a může je dále šířit a modifikovat, nemůže nikdo získat monopolní postavení pro upgrade a podporu.
+	Autoři studie popisované v této kapitole vytvořili dvou-obdobní model inspirovaný prací P. Klempera. V tomto modelu se zákazníci odlišují mezi sebou svými preferencemi a model zahrnuje open source a {\em nestrategický\footnote{Cenu proprietárního software strategicky stanovuje jeho dodavatel. Otevřená komunita se nechová strategicky, nebude tedy lákat zákazníky na nízkou cenu v prvním období, kterou by následně zvýšila~\cite[str. 2]{lock-in-competition}.}, ale důvěryhodný závazek} o budoucích cenách (tj. cena vždy zůstane zdarma), garantovaný OSS licencemi, jako je třeba GNU General Public License (GPL)\footnote{Zde považuji za nutné zdůraznit, že GNU GPL nezakazuje prodej SW~\cite{selling-foss}. Protože však autor nemůže s takovouto licencí zabránit volnému šíření, může se např. několik potenciálních zákazníků spojit a software zakoupit společně. V praxi tedy nemůže nastat situace s monopolní cenou produktu. Pokud ale ani autor, ani žádný zákazník neposkytne získaný software zdarma někomu dalšímu, cena nulová nebude.}~\cite[str. 2]{lock-in-competition}. Rovněž protože zákazník má k dispozici zdrojové kódy a může je dále šířit a modifikovat, nemůže nikdo získat monopolní postavení pro upgrade a podporu.
 
 	Tento závazek open source způsobuje problém pro dodavatele uzavřených řešení, neboť je obtížnější zajmout zákazníka přemýšlejícího o budoucnosti, který může vycícit riziko lock-in. Pokud tedy má vybrat proprietární produkt s očekáváním lock-in, bude takový zákazník chtít výraznou slevu, či dokonce dotaci před pořízením takového produktu. Takové slevy pro získání zákazníků mohou nakonec dodavatele stát víc, než kolik následně na lock-in vydělá v druhé fázi, jak autoři ukazují na svém modelu. Konkrétní ztráta či zisk se však liší, pokud zákazník plánuje jen krátkou dobu dopředu. V takovém případě může být lock-in pro dodavatele výhodný.
 
@@ -100,10 +102,10 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 	Motivování takovým pozorovnáním v praxi, přidáváme další rozměr heterogenity: {\em reservation utility}\footnote{Pro {\em reservation utility} se mi nepodařilo nalézt vhodné české slovo. Význam tohoto pojmu by se dal volně větou přeložit jako \uv{využití nasmlouvané kapacity}. V případě SW to odpovídá intenzitě využívání a případně i počtu licencí.}, což náš model činí dvourozměrným, na rozdíl od literatury, která používá jednorozměrný horizontální, příp. jednorozměrný vertikální model odlišnosti. Pro každý software totiž mají různí zákazníci různé využití. Někteří jej využívají intenzivně, pro jiné je jen okrajovým nástrojem. To vede k odlišné {\em reservation utility} mezi zákazníky kvůli jejich rozdílům v ohodnocení, rozpočtu, či ceně. (Gartner Researarch Note 2003).
 
 	\vspace{10pt}
-	\noindent{\sc Předpoklad 3.}~{\em Zákazníci mají vertikálně odlišnou svou reservation utitlity.}
+	\noindent{\sc Předpoklad 3.}~{\em Zákazníci mají vertikálně odlišnou svoji hodnotu reservation utitlity.}
 	\vspace{10pt}
 
-	Protože model zachycuje heterogenitu ve dvou dimenzích, jsou zákazníci matematicky modelování jako dvojice $r$ a $\theta$, kde $r$ představuje reservation utility a $\theta$, nezávisle na $r$, vzdálenost jejich preference od produktu $A$ (tedy $(1-\theta)$ je vzdálenost od $O$.) Zákazníci jsou uniformě distribuovaní v rozsahu $[0,1]$ pro $\theta$ a pro $r$ v rozsahu $[R, (1+\lambda)R]$, kde $1/\lambda R$ je funkce hustoty, kde $R$ je spodní hranice zákazníkovy reservation utility.
+	Protože model zachycuje heterogenitu ve dvou dimenzích, jsou zákazníci matematicky modelování jako dvojice $(r,\theta)$, kde $r$ představuje reservation utility a $\theta$, nezávisle na $r$, vzdálenost jejich preference od produktu $A$ (tedy $(1-\theta)$ je vzdálenost od $O$.) Zákazníci jsou uniformě distribuovaní v rozsahu $[0,1]$ pro $\theta$ a pro $r$ v rozsahu $[R, (1+\lambda)R]$, kde $1/\lambda R$ je funkce hustoty, kde $R$ je spodní hranice zákazníkovy reservation utility.
 
 		\vspace{10pt}
 		\noindent{\sc Předpoklad 4.}~{\em Zákazníci jsou reprezentováni $(r,\theta)$, kde $\theta \sim U(0,1)$ a $r \sim U(R, R(1+\lambda))$.}
@@ -117,7 +119,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 		\noindent{\sc Předpoklad 5.}~{\em Zákazník při přechodu na jiný než původně vybraný software bude muset zaplatit cenu $s (s\geq0)$.}
 		\vspace{10pt}
 
-	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
+	Tato cena za přechod představuje náklady na změnu nastavení hardware, přepsaní vlastních úprav a aplikací, přeškolení zaměstnanců, a další. Dodavatelé v druhém období upgradují svůj SW, což zvýší zákazníkovu reservation utility o $v_{up}\geq0$. Pokud zákazník zůstane u zvoleného řešení, jeho zisk je $0\leq v_b < R$. Předpokládáme, že zákazník využívá v daném období pouze jeden produkt.
 
 	\subsection*{Výsledky modelu}
 	{\em V této kapitole shrnuji výsledky získané z výše popsaného modelu, což zahrnuje kapitoly 3, 4, 5 a 6 původní zprávy.}
@@ -126,19 +128,19 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Autoři ukazují, že zákazníci, kteří nejpravděpodobněji přejdou od $A$ k $O$ při neoptimální ceně jsou převážně zákazníci s vysokou reservation utility, tedy zákazníci pro dodavatele důležití.
 
-	Přesto, že při optimálních cenách nedojde ke změně, někteří zákazníci, s nízkou reservation utility, mohou odmítnout upgrade a zůstat na staré verzi, tedy nepřinést v období 2 žádný zisk. To se týká především těch zákazníků, kteří jsou indiferentní mezi $A$ a $O$, a přesto, že ví, že si variantu $A$ z nějakého důvodu nemůžou v období 2 dovolit, sleva v období 1 je přiměje vybrat si produkt $A$~\cite[str. 6]{lock-in-competition}.
+	Přesto, že při optimálních cenách nedojde ke změně, někteří zákazníci s nízkou reservation utility mohou odmítnout upgrade a zůstat na staré verzi, tedy nepřinést v období 2 žádný zisk. To se týká především těch zákazníků, kteří jsou indiferentní mezi $A$ a $O$, a přesto, že ví, že si variantu $A$ z nějakého důvodu nemohou v období 2 dovolit, sleva v období 1 je přiměje vybrat si produkt $A$~\cite[str. 6]{lock-in-competition}.
 
-	Důsledkem je, že celkový zisk dodavatele $A$ je ve hře, kde ne všichni jeho zákazníci upgradují nižší, než by byl ve hře bez, nebo s nízkou cenou za přechod. Důvodem je, že sice vyšší cena za přechod dovolí dodavateli $A$ účtovat v období 2 vyšší cenu, ale aby získal zákazníky, musí v prvním období nabídnout slevu. Jenže nízká cena v období 1 nenaláká pouze užitečné zákazníky s vysokým reservation utility, ale také \uv{neužitečné}, kteří využijí nízké ceny na úkor dodavatele, ale už nepřinesou žádný následný zisk.
+	Důsledkem je, že celkový zisk dodavatele $A$ je ve hře, kde ne všichni jeho zákazníci upgradují, nižší, než by byl ve hře bez, nebo s nízkou cenou za přechod. Důvodem je, že sice vyšší cena za přechod dovolí dodavateli $A$ účtovat v období 2 vyšší cenu, ale aby získal zákazníky, musí v prvním období nabídnout slevu. Jenže nízká cena v období 1 nenaláká pouze užitečné zákazníky s vysokou reservation utility, ale také \uv{neužitečné}, kteří využijí nízké ceny na úkor dodavatele, ale už nepřinesou žádný následný zisk.
 
 	Pokud ale cena za přechod je nízká či žádná, dodavatel nemůže v období 2 výrazně zvednou cenu. Zákazníci se tak nemusí obávat, že je dodavatel $A$ ve druhém období zneužije a ochotněji přijmou jeho řešení s vědomím, že kdykoliv mohou jít ke konkurenci. Důsledek je, že $A$ nemusí snižovat v prvním období svůj zisk, a tedy nabídnutí možnosti volby zákazníkům je pro něj paradoxně přínosnější~\cite[str. 7 a kap. 3: lemma 2]{lock-in-competition}.
 
-	Model tedy ukazuje, že vendor lock-in v soupeření s Open Source řešením proprietárního dodavatele poškozuje.
+	Model tedy ukazuje, že vendor lock-in v soupeření s open source řešením proprietárního dodavatele poškozuje.
 
 	Pokud rozšíříme pohled i na krátkozraké zákazníky\footnote{Krátkozrakým zákazníkem může být například společnost, kde o výběru řešení rozhoduje pracovník, který předpokládá, že v druhém období už nebude v dané společnosti pracovat, a jehož plat či odměna závisí na zisku z prvního období.}, zjistíme, že ti ve svém rozhodování nijak neuvažují následující období a rozhodují se čistě podle cen v první periodě. V takovém případě je pro dodavatele $A$ jednoznačně výhodnější vendor lock-in použít. Je tedy vidět, že chování zákazníků má výrazný vliv na ekvilibrium hry~\cite[kap. 4]{lock-in-competition}.
 
 	Celkový zisk všech zákazníků ve hře byl v případě, že dodavatel $A$ použil lock-in nižší, než pokud měli zákazníci možnost volby~\cite[kap. 5]{lock-in-competition}
 
-	Výsledky tohoto modelu potvrzuje vývoj průmyslu ve zvyšování interoperability mezi proprietárním a Open Source software, jako příklad můžeme použít stále rostoucí příklon či spolupráci s Open Source u Microsoftu a Oracle~\cite[kap. 6]{lock-in-competition}, nebo úspěch Red Hatu~\cite{redhat-growth}.
+	Výsledky tohoto modelu potvrzuje vývoj průmyslu ve zvyšování interoperability mezi proprietárním a open-source software, jako příklad můžeme použít stále rostoucí příklon či spolupráci s open source u Microsoftu a Oracle~\cite[kap. 6]{lock-in-competition}, nebo úspěch Red Hatu~\cite{redhat-growth}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vliv architektury systému na vývojový proces v open-source}
@@ -157,8 +159,8 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 		\begin{tabular}{r| c c}
 				& Použít cizí & Vytvořit \\
 				\hline
-			Použít cizí & $0,0$ &\cellcolor{gray!20} $v, v-c$ \\
-			Vytvořit &\cellcolor{gray!20} $v-c, v$ & $v-c, v-c$ \\
+			Použít cizí & $0,0$ &\cellcolor{gray!25} $v, v-c$ \\
+			Vytvořit &\cellcolor{gray!25} $v-c, v$ & $v-c, v-c$ \\
 		\end{tabular}
 		\end{center}
 		\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu. Symetrická, jednokolová hra dvou hráčů.}
@@ -173,39 +175,39 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 		Uvažujme nyní hru dvou hráčů s perfektní informací. Systém, který chtějí hráči použít, zahrnuje platformu a dva moduly, $A$ a $B$. Platforma je v době hry již napsaná a tedy cena za její vytvoření již není podstatná. Moduly je však třeba vytvořit.
 
-
-			\begin{Figure}
-			\begin{center}
-			\begingroup
-			\medmuskip=0mu
-			\thickmuskip=0mu
-				\makeatletter\def\f@size{8}
-			\hskip-0.7cm
-			\begin{tabular}{r| c c c}
-					& $Nic$ & $A$ & $B$ \\
-					\hline
-				$Nic$ &
-				 	$0,0$ &
-					$\frac{1}{2}v, \frac{1}{2}(v-c)$ &
-					$\frac{1}{2}v, \frac{1}{2}(v-c)$ \\
-				$A$ &
-					$\frac{1}{2}(v-c), \frac{1}{2}v$ &
-					$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ &
-					\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ \\
-				$B$ &
-					$\frac{1}{2}(v-c), \frac{1}{2}v$ &
-					\cellcolor{gray!20}$v-\frac{1}{2}c, v-\frac{1}{2}c$ &
-					$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ \\
-			\end{tabular}
-			\endgroup
-			\end{center}
-			\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu dvou hráčů se dvěma moduly.}
-			\label{tab:involuntary-altruism-modules-perfect-information}
-			\end{Figure}
-
 		Z definice modulů je možné na každém z nich pracovat nezávisle. Každý z těchto modulů zvedne hodnotu systému o $v/2$ za cenu $c/2$. Celkem tak zisk celého systému zůstává $v$ a náklady $c$, jako u monolitického systému. Rozdíl však je, že platforma a libovolný modul je funkční celek, a lze mít zisk ze systému i pokud ne všechny moduly jsou implementovány.
 
 		Každý hráč si může nezávisle vybrat, za nebude vytvářet nic, či zda vytvoří modul $A$, či $B$.
+
+		\begin{Figure}
+		\begin{center}
+		\begingroup
+		\setlength\extrarowheight{2pt}
+		\medmuskip=0mu
+		\thickmuskip=0mu
+			\makeatletter\def\f@size{9}
+		%\hskip-0.7cm
+		\begin{tabular}{r| c c c}
+				& $Nic$ & $A$ & $B$ \\
+				\hline
+			$Nic$ &
+			 	$0,0$ &
+				$\frac{1}{2}v, \frac{1}{2}(v-c)$ &
+				$\frac{1}{2}v, \frac{1}{2}(v-c)$ \\
+			$A$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ &
+				\cellcolor{gray!25}$v-\frac{1}{2}c, v-\frac{1}{2}c$ \\
+			$B$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}v$ &
+				\cellcolor{gray!25}$v-\frac{1}{2}c, v-\frac{1}{2}c$ &
+				$\frac{1}{2}(v-c), \frac{1}{2}(v-c)$ \\
+		\end{tabular}
+		\endgroup
+		\end{center}
+		\captionof{table}{Normální forma jednoduché hry nedobrovolného altruismu dvou hráčů se dvěma moduly.}
+		\label{tab:involuntary-altruism-modules-perfect-information}
+		\end{Figure}
 
 		Výsledná hra je zobrazena v tabulce~\ref{tab:involuntary-altruism-modules-perfect-information}. Hra má dvě Nashova ekvilibria (zvýrazněno šedou barvou), ve kterých si hráči rozdělí práci na modulech. V těchto ekvilibriích je pro oba vývojáře jednoznačně výhodnější se do vývoje zapojit, než zůstat stranou a buď se jen vézt, nebo implementovat nezávislé řešení. Jejich zisk je totiž $v - c/2$, oproti $v-c$ pro izolovanou činnost.
 
@@ -213,9 +215,9 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 		Důkaz prvního tvrzení je veden proti strategickému profilu, kde některý modul není naprogramován. Zřejmě v takovém profilu může některý hráč, který nic nedělá, zlepšit svůj zisk tím, že chybějící modul naprogramuje. Tedy takový profil nemůže být ekvilibriem.
 
-		Druhé tvrzení pak dokazují na příkladu s různě ochotnými vývojáři, kdy někteří čekají, jestli za ně neudělá práci někdo jiný, zatímco další začnou pracovat ihned a v každém kole naprogramují jeden modul. Tato situace se dá chápat jako hrozba (,,nebudu pracovat''), ovšem je hrozbou nedůvěryhodnou, neboť v posledním kole tito hráči musí naprogramovat nějaký modul, jak bylo ukazuje předchozí tvrzení. V takové situaci je ovšem i pro vývojáře, kteří by začali pracovat hned, lepší počkat na poslední kolo stejně jako ostatní~\cite[kap. 4.1]{architecture-opensource}.
+		Druhé tvrzení pak dokazují na příkladu s různě ochotnými vývojáři, kdy někteří čekají, jestli za ně neudělá práci někdo jiný, zatímco další začnou pracovat ihned a v každém kole naprogramují jeden modul. Tato situace se dá chápat jako hrozba (,,nebudu pracovat''), ovšem je hrozbou nedůvěryhodnou, neboť pro dosažení ekvilibria v posledním kole musí tito hráči  naprogramovat nějaký modul, jak ukazuje předchozí tvrzení. V takové situaci je ovšem i pro vývojáře, kteří by začali pracovat hned, lepší počkat na poslední kolo, stejně jako ostatní~\cite[kap. 4.1]{architecture-opensource}.
 
-		V souhrnu pak taková hra s $N$ hráči a $j$ moduly a koly (tedy je možné, aby pro $N =1$ byl naprogramován celý systém se všemy moduly) má vždy co nejrovnoměrnější rozdělení práce. Počet hráčů, kteří se pouze vezou, však nemá na aktivní vývojáře žádný vliv. Pokud $N > j$, tedy je více hráčů než modulů, zisk vývojářů se nijak nezmění oproti $N = j$.
+		V souhrnu pak taková hra s $N$ hráči a $j$ moduly a koly (tedy je možné, aby i pro $N =1$ byl naprogramován celý systém se všemy moduly) má vždy co nejrovnoměrnější rozdělení práce. Počet hráčů, kteří se pouze vezou, však nemá na aktivní vývojáře žádný vliv. Pokud $N > j$, tedy je více hráčů než modulů, zisk vývojářů se nijak nezmění oproti $N = j$.
 
 	\subsection*{Hodnota volby}
 		Až dosud jsme předpokládali hru s úplnou informací, že hodnota systému, modulů, i vynaložená práce byla známá před zahájením hry. Vývoj software, jakožto návrhový proces, však tomuto předpokladu neodpovídá, je to proces s výrazným vlivem nejistoty. Tato nejistota pak způsobuje, že nové návrhy mají charakter volby. Autoři používají definici z moderních finančních teorií a formulují {\em volbu} jako právo, ale ne povinnost, vybrat směr aktivity a získat odpovídající výplatu.
@@ -258,16 +260,16 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 		V závěru se pak autoři zamýšlí a srovnávají svůj model s jinými studiemi. Konkrétně je jmenován například essej {\em The Cathedral and the Bazaar} od Erica S. Raymonda. Ukazují, že jejich model formalizuje a rozšiřuje Raymondovu teorii a že alespoň teoreticky lze minimalizovat některé problémy, na které Raymond ve svém díle poukazuje (uživatelé, kteří nijak nepřispívají).
 
-	 	Při srovnání s dílem J. Lernera a J. Tirole ({\em Some Simple Economics of Open Source}) pak poukazují na to, že pokud reputace získaná aktivitou v Open Source projektech je přínosem pro hodnotu vývojáře na pracovním trhu před potenciálním zaměstnavatelem, pak toto přispívání je ekonomicky zcela racionální, a skutečné otázky Open Source se týkají nikoliv motivace, ale ,,vedení, organizovaní a správy'', a Baldwinová a Clark poznamenávají, že otázka ,,jaká je vhodná architektura'' může být do tohoto seznamu přidána.
+	 	Při srovnání s dílem J. Lernera a J. Tirole ({\em Some Simple Economics of Open Source}) pak poukazují na to, že pokud reputace získaná aktivitou v open-source projektech je přínosem pro hodnotu vývojáře na pracovním trhu před potenciálním zaměstnavatelem, pak toto přispívání je ekonomicky zcela racionální, a skutečné otázky open source se týkají nikoliv motivace, ale ,,vedení, organizovaní a správy'', a Baldwinová a Clark poznamenávají, že otázka ,,jaká je vhodná architektura'' může být do tohoto seznamu přidána.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shrnutí}
 	V této zprávě jsem se věnoval převážně dvěma článkům na téma teorie her a open-source, které však k tématu přistupovaly ze zcela odlišných úhlů. Z dotyčných článků jsem popsal a okomentoval především jejich výsledky a základní principy použitých modelů, bez zabíhání do přílišných matematických detailů. Případné zájemce o hlubší prozkoumání modelovaných situací mohu odkázat na originální texty.
 
-	Je zřejmé, že tato oblast skýtá mnoho prostoru pro budoucí výzkum, a na rozdíl od uzavřeného vývoje, je získání dat výrazně snazší: u většiny projektů lze dohledat archiv veškeré komunikace za celou existenci projektu (mailing listy), ve veřejných repozitářích s verzovacím systémem lze zjistit aktivitu jednotlivých členů komunity v průběhu času, a lze jednotlivé členy otevřeně kontaktovat. Tohoto si všímají i Georg von Krogh a Eric von Hippel v {\em The Promise of Research on Open Source Software}, kde velmi stručně recenzují řadu studií na téma open-source a poukazují například na průzkum provedený mezi členy Linux User Group.
+	Je zřejmé, že tato oblast skýtá mnoho prostoru pro budoucí výzkum, a na rozdíl od uzavřeného vývoje, získání dat je výrazně snazší: u většiny projektů lze dohledat archiv veškeré komunikace za celou existenci projektu (mailing listy), ve veřejných repozitářích s verzovacím systémem lze zjistit aktivitu jednotlivých členů komunity v průběhu času, a lze jednotlivé členy otevřeně kontaktovat. Tohoto si všímají i Georg von Krogh a Eric von Hippel v {\em The Promise of Research on Open Source Software}, kde velmi stručně recenzují řadu studií na téma open source a poukazují například na průzkum provedený mezi členy Linux User Group.
 
-	Je tedy pravděpodobné, že počet studií a článků spojujících teorii her a open-source bude do budoucna růst.
+	Je tedy pravděpodobné, že počet studií a článků spojujících teorii her a open source bude do budoucna růst.
 
 
 
