@@ -6,13 +6,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-\noindent Navzdory stále rostoucímu významu open-source \todo{sources: microsoft opening, apple based on, millenials and jobs...} v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě shrnuji dva články na téma teorie her a Open Source.
+\noindent Navzdory stále rostoucímu významu open-source v ekonomice je obtížné nalézt články či výzkumy zaobírající se studiem open-source z pohledu teorie her. A to jak z pohledu ekonomického (soupeření open-source a proprietárních produktů či dodavatelů), tak z pohledu spíše psychologického (pohled na jednotlivé členy open-source komunity, jejich motivaci, očekávaný zisk, a podobně.) Nějaký výzkum v této oblasti však přeci jen existuje a v této zprávě shrnuji dva články na téma teorie her a Open Source.
 \end{abstract}
 
-\listoftodos
+%\listoftodos
 \hrulefill
 \begin{multicols}{2}
-\lettrine[nindent=0em,lines=3]{O}{pen source} ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci.\todo{Some opening, more about used sources...} V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
+\lettrine[nindent=0em,lines=3]{O}{pen source} ve smyslu definovaném Open Source Initiative~\cite{OSI-2011}, znamená svobodný přístup, distribuci a modifikaci. V takovém prostředí je velmi obtížné, až nemožné, pro nějakou skupinu či jednotlivce získat dominantní postavení. Konkrétní vývojář sice může uplatňovat sebetvrdší pravidla a vést svůj projekt určitým způsobem, nemůže však nikomu zabránit ve vytvoření paralelního projektu sdílejícího stejný kód (tzv. vytvořit fork) a vést vývoj jiným směrem. A bude-li tento nový směr přijatelnější pro uživatele či přispěvatele do projektu, původní projekt může zaniknout, aniž by přitom do něj vložená práce byla ztracena.
+
+Že se open-source a kolaborace stává stále výraznějším fenoménem lze pozorovat na řadě faktorů. Například na konci roku 2015 byla oznámena úzká spolupráce společností Red Hat a Microsoft, dvou konkurentů jak v oblasti operačních systémů, tak virtualizačních řešení, právě na oficiální podpoře konkurenčních produktů na vlastní platformě (např. Red Hat Enterprise Linux na Microsoft Azure)~\cite{redhat-microsoft}. Jiným příkladem může být uvolnění některých produktů Microsoftu jako open-source~\cite{dotnet-github}. V roce 2001 přitom vedení Microsoftu mělo o Linuxu a open-source zcela opačný názor~\cite{ballmer-linux}.
 
 Open source se přitom zásadně liší od zažitých představ a předpokladů a softwarovém vývoji a nabourává dosavadní teorie o motivaci inovovat~\cite{promise-of-research-opensource}. Toto se dá snadno ilustrovat na Vězňově dilematu. Klasická verze hry, kdy hráči rozhodují, jestli zveřejnit svůj vývoj, nebo ho držet uzavřený, se dá popsat podle hry v tabulce \ref{tab:classic-prisoner}. V takové hře je sice spolupráce na otevřeném projektu pro oba hráče lepší, než když každý z nich pracuje na své uzavřené variantě. Ale protože většího zisku hráč dosáhne, pokud použije data zveřejněná konkurentem a sám nic nepřispěje (a konkurent tak kvůli delšímu vývoji získá méně zákazníků), má takováto hra jediné Nashovo ekvilibrium (uzavřít,uzavřít), tedy zisk $(-1,-1)$.
 
@@ -95,7 +97,7 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 	Tedy pokud $A$ i $O$ jsou nabízeny za stejnou cenu, někteří zákazníci zvolí $A$, zatímco jiní $O$, protože jinak hodnotí vlastnosti produktu. Například OSS lze snadněji upravit pro konkrétní potřeby, zatímco proprietární software mívá kvalitnější uživatelské rozhraní a dokumentaci. Jako příklad může posloužit srovnání J2EE a .NET. Estes a Maxime (2003) shrnují seznam srovnání mezi J2EE a .NET a konstatují, že výběr záleží na konkrétních potřebách a preferencích  uživatele.
 
-	Motivování takovým pozorovnáním v praxi, přidáváme další rozměr heterogenity: {\em reservation utility}\footnote{Pro {\em reservation utility} se mi nepodařilo nalézt vhodné české slovo. Význam tohoto pojmu by se dal volně větou přeložit jako \uv{využití nasmlouvané kapacity}. V případě SW to odpovídá intenzitě využívání a případně i počtu licencí.}\todo{Czech translation?}, což náš model činí dvourozměrným, na rozdíl od literatury, která používá jednorozměrný horizontální, příp. jednorozměrný vertikální model odlišnosti. Pro každý software totiž mají různí zákazníci různé využití. Někteří jej využívají intenzivně, pro jiné je jen okrajovým nástrojem. To vede k odlišné {\em reservation utility} mezi zákazníky kvůli jejich rozdílům v ohodnocení, rozpočtu, či ceně. (Gartner Researarch Note 2003).
+	Motivování takovým pozorovnáním v praxi, přidáváme další rozměr heterogenity: {\em reservation utility}\footnote{Pro {\em reservation utility} se mi nepodařilo nalézt vhodné české slovo. Význam tohoto pojmu by se dal volně větou přeložit jako \uv{využití nasmlouvané kapacity}. V případě SW to odpovídá intenzitě využívání a případně i počtu licencí.}, což náš model činí dvourozměrným, na rozdíl od literatury, která používá jednorozměrný horizontální, příp. jednorozměrný vertikální model odlišnosti. Pro každý software totiž mají různí zákazníci různé využití. Někteří jej využívají intenzivně, pro jiné je jen okrajovým nástrojem. To vede k odlišné {\em reservation utility} mezi zákazníky kvůli jejich rozdílům v ohodnocení, rozpočtu, či ceně. (Gartner Researarch Note 2003).
 
 	\vspace{10pt}
 	\noindent{\sc Předpoklad 3.}~{\em Zákazníci mají vertikálně odlišnou svou reservation utitlity.}
@@ -261,10 +263,16 @@ Protože tato zpráva vznikla jako shrnutí několika různých textů, které s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Shrnutí}
+	V této zprávě jsem se věnoval převážně dvěma článkům na téma teorie her a open-source, které však k tématu přistupovaly ze zcela odlišných úhlů. Z dotyčných článků jsem popsal a okomentoval především jejich výsledky a základní principy použitých modelů, bez zabíhání do přílišných matematických detailů. Případné zájemce o hlubší prozkoumání modelovaných situací mohu odkázat na originální texty.
+
+	Je zřejmé, že tato oblast skýtá mnoho prostoru pro budoucí výzkum, a na rozdíl od uzavřeného vývoje, je získání dat výrazně snazší: u většiny projektů lze dohledat archiv veškeré komunikace za celou existenci projektu (mailing listy), ve veřejných repozitářích s verzovacím systémem lze zjistit aktivitu jednotlivých členů komunity v průběhu času, a lze jednotlivé členy otevřeně kontaktovat. Tohoto si všímají i Georg von Krogh a Eric von Hippel v {\em The Promise of Research on Open Source Software}, kde velmi stručně recenzují řadu studií na téma open-source a poukazují například na průzkum provedený mezi členy Linux User Group.
+
+	Je tedy pravděpodobné, že počet studií a článků spojujících teorii her a open-source bude do budoucna růst.
 
 
 
-
+\subsection*{Poděkování}
+Lorem ipsum foo bar, jestli seženu někoho, kdo si to přečte a najde chyby.
 
 
 
