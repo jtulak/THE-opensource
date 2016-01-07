@@ -10,9 +10,10 @@ $(NAME).pdf: clean full
 
 full:
 	#vlna $(VLNA_OPTS) $(CONTENT).tex
-	$(CC) --enable-write18 -draftmode $(NAME).tex
+	#$(CC) --enable-write18 -draftmode $(NAME).tex
+	$(CC) --enable-write18  $(NAME).tex
 	bibtex $(NAME)
-	$(CC)  -draftmode $(NAME).tex
+	$(CC)  $(NAME).tex
 	$(CC)  $(NAME).tex
 
 
